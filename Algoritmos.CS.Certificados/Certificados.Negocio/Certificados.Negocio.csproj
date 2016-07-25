@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GenerarCertificados\CertificadoDigital.cs" />
+    <Compile Include="GenerarCertificados\DatosDeUnCertificadoDigital.cs" />
     <Compile Include="GenerarCertificados\GeneracionDeCertificadosDigitales.cs" />
     <Compile Include="GenerarCertificados\Sujeto.cs" />
     <Compile Include="GenerarCertificados\Sujetos\ApellidosEnMayusculas.cs" />

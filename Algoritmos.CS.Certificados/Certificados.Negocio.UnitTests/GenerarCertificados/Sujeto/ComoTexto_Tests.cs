@@ -16,7 +16,7 @@ namespace Certificados.Negocio.UnitTests.GenerarCertificados.Sujetos_Tests
             elResultadoEsperado = "CN=MIGUEL SUAREZ GODINEZ (AUTENTICACION), OU=CIUDADANO, O=PERSONA FISICA, C=CR, GivenName=MIGUEL, Surname=SUAREZ GODINEZ, SERIALNUMBER=CPF-3034560333";
 
             InicialiceEscenarioNacionalDeAutenticacion();
-            elResultadoObtenido = new Sujeto(elNombre, elPrimerApellido, elSegundoApellido, laIdentificacion, elTipoDeIdentificacion, elTipoDeCertificado).ComoTexto();
+            elResultadoObtenido = new Sujeto(losDatos).ComoTexto();
 
             Assert.AreEqual(elResultadoEsperado, elResultadoObtenido);
         }
@@ -27,7 +27,7 @@ namespace Certificados.Negocio.UnitTests.GenerarCertificados.Sujetos_Tests
             elResultadoEsperado = "CN=MIGUEL SUAREZ GODINEZ (FIRMA), OU=CIUDADANO, O=PERSONA FISICA, C=CR, GivenName=MIGUEL, Surname=SUAREZ GODINEZ, SERIALNUMBER=CPF-3034560333";
 
             InicialiceEscenarioNacionalDeFirma();
-            elResultadoObtenido = new Sujeto(elNombre, elPrimerApellido, elSegundoApellido, laIdentificacion, elTipoDeIdentificacion, elTipoDeCertificado).ComoTexto();
+            elResultadoObtenido = new Sujeto(losDatos).ComoTexto();
 
             Assert.AreEqual(elResultadoEsperado, elResultadoObtenido);
         }
@@ -38,7 +38,7 @@ namespace Certificados.Negocio.UnitTests.GenerarCertificados.Sujetos_Tests
             elResultadoEsperado = "CN=MIGUEL SUAREZ GODINEZ (AUTENTICACION), OU=EXTRANJERO, O=PERSONA FISICA, C=CR, GivenName=MIGUEL, Surname=SUAREZ GODINEZ, SERIALNUMBER=NUP-3034560333";
 
             InicialiceEscenarioExtranjeroDeAutenticacion();
-            elResultadoObtenido = new Sujeto(elNombre, elPrimerApellido, elSegundoApellido, laIdentificacion, elTipoDeIdentificacion, elTipoDeCertificado).ComoTexto();
+            elResultadoObtenido = new Sujeto(losDatos).ComoTexto();
 
             Assert.AreEqual(elResultadoEsperado, elResultadoObtenido);
         }
@@ -49,7 +49,7 @@ namespace Certificados.Negocio.UnitTests.GenerarCertificados.Sujetos_Tests
             elResultadoEsperado = "CN=MIGUEL SUAREZ GODINEZ (FIRMA), OU=EXTRANJERO, O=PERSONA FISICA, C=CR, GivenName=MIGUEL, Surname=SUAREZ GODINEZ, SERIALNUMBER=NUP-3034560333";
 
             InicialiceEscenarioExtranjeroDeFirma();
-            elResultadoObtenido = new Sujeto(elNombre, elPrimerApellido, elSegundoApellido, laIdentificacion, elTipoDeIdentificacion, elTipoDeCertificado).ComoTexto();
+            elResultadoObtenido = new Sujeto(losDatos).ComoTexto();
 
             Assert.AreEqual(elResultadoEsperado, elResultadoObtenido);
         }

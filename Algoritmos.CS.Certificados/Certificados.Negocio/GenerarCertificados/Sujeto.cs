@@ -6,44 +6,44 @@ namespace Certificados.Negocio.GenerarCertificados
     {
         InformacionFormateada laInformacion;
 
-        public Sujeto(string elNombre, string elPrimerApellido, string elSegundoApellido, string laIdentificacion, TipoDeIdentificacion elTipoDeIdentificacion, TipoDeCertificado elTipoDeCertificado)
+        public Sujeto(DatosDeUnCertificadoDigital losDatos)
         {
-            laInformacion = ObtengaLaInformacionFormateada(elTipoDeIdentificacion, elTipoDeCertificado);
-            laInformacion.Nombre = elNombre;
-            laInformacion.PrimerApellido = elPrimerApellido;
-            laInformacion.SegundoApellido = elSegundoApellido;
-            laInformacion.Identificacion = laIdentificacion;
+            laInformacion = ObtengaLaInformacionFormateada(losDatos);
+            laInformacion.Nombre = losDatos.Nombre;
+            laInformacion.PrimerApellido = losDatos.PrimerApellido;
+            laInformacion.SegundoApellido = losDatos.SegundoApellido;
+            laInformacion.Identificacion = losDatos.Identificacion;
         }
 
-        private static InformacionFormateada ObtengaLaInformacionFormateada(TipoDeIdentificacion elTipoDeIdentificacion, TipoDeCertificado elTipoDeCertificado)
+        private static InformacionFormateada ObtengaLaInformacionFormateada(DatosDeUnCertificadoDigital losDatos)
         {
-            if (ElPropositoEsDeAutenticacion(elTipoDeCertificado))
-                return ObtengaLaInformacionDeAutenticacion(elTipoDeIdentificacion);
+            if (ElPropositoEsDeAutenticacion(losDatos))
+                return ObtengaLaInformacionDeAutenticacion(losDatos);
             else
-                return ObtengaLaInformacionDeFirma(elTipoDeIdentificacion);
+                return ObtengaLaInformacionDeFirma(losDatos);
         }
 
-        private static bool ElPropositoEsDeAutenticacion(TipoDeCertificado elTipoDeCertificado)
+        private static bool ElPropositoEsDeAutenticacion(DatosDeUnCertificadoDigital losDatos)
         {
-            return elTipoDeCertificado == TipoDeCertificado.Autenticacion;
+            return losDatos.ElPropositoEsDeAutenticacion();
         }
 
-        private static InformacionFormateada ObtengaLaInformacionDeAutenticacion(TipoDeIdentificacion elTipoDeIdentificacion)
+        private static InformacionFormateada ObtengaLaInformacionDeAutenticacion(DatosDeUnCertificadoDigital losDatos)
         {
-            if (EsNacional(elTipoDeIdentificacion))
+            if (EsNacional(losDatos))
                 return new InformacionNacionalDeAutenticacion();
             else
                 return new InformacionExtranjeraDeAutenticacion();
         }
 
-        private static bool EsNacional(TipoDeIdentificacion elTipoDeIdentificacion)
+        private static bool EsNacional(DatosDeUnCertificadoDigital losDatos)
         {
-            return elTipoDeIdentificacion == TipoDeIdentificacion.Cedula;
+            return losDatos.EsNacional();
         }
 
-        private static InformacionFormateada ObtengaLaInformacionDeFirma(TipoDeIdentificacion elTipoDeIdentificacion)
+        private static InformacionFormateada ObtengaLaInformacionDeFirma(DatosDeUnCertificadoDigital losDatos)
         {
-            if (EsNacional(elTipoDeIdentificacion))
+            if (EsNacional(losDatos))
                 return new InformacionNacionalDeFirma();
             else
                 return new InformacionExtranjeraDeFirma();
