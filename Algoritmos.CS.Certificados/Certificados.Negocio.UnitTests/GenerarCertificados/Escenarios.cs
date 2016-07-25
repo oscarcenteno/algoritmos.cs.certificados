@@ -1,4 +1,5 @@
 ﻿using Certificados.Negocio.GenerarCertificados;
+using Sujetos;
 using System;
 
 namespace Certificados.Negocio.UnitTests.GenerarCertificados
@@ -6,14 +7,11 @@ namespace Certificados.Negocio.UnitTests.GenerarCertificados
     public class Escenarios
     {
         protected CertificadoDigital elCertificado;
-        protected DatosDeUnCertificadoDigital losDatos;
+        protected InformacionFormateada losDatos;
 
         protected void InicialiceEscenarioNacionalDeAutenticacion()
         {
-            losDatos = new DatosDeUnCertificadoDigital();
-            losDatos.TipoDeIdentificacion = TipoDeIdentificacion.Cedula;
-            losDatos.TipoDeCertificado = TipoDeCertificado.Autenticacion;
-
+            losDatos = new InformacionNacionalDeAutenticacion();
             InicialiceUnaPersona();
         }
 
@@ -26,30 +24,24 @@ namespace Certificados.Negocio.UnitTests.GenerarCertificados
             losDatos.DireccionDeRevocacion = "http://direccionderevocacion.com";
             losDatos.AñosDeVigencia = 4;
             losDatos.FechaActual = new DateTime(2016, 10, 11);
-            elCertificado = GeneracionDeCertificadosDigitales.GenereUnCertificadoDigital(losDatos);
+            elCertificado = new CertificadoDigital(losDatos);
         }
 
         protected void InicialiceEscenarioNacionalDeFirma()
         {
-            losDatos = new DatosDeUnCertificadoDigital();
-            losDatos.TipoDeIdentificacion = TipoDeIdentificacion.Cedula;
-            losDatos.TipoDeCertificado = TipoDeCertificado.Firma;
+            losDatos = new InformacionNacionalDeFirma();
             InicialiceUnaPersona();
         }
 
         protected void InicialiceEscenarioExtranjeroDeAutenticacion()
         {
-            losDatos = new DatosDeUnCertificadoDigital();
-            losDatos.TipoDeIdentificacion = TipoDeIdentificacion.Dimex;
-            losDatos.TipoDeCertificado = TipoDeCertificado.Autenticacion;
+            losDatos = new InformacionExtranjeraDeAutenticacion();
             InicialiceUnaPersona();
         }
 
         protected void InicialiceEscenarioExtranjeroDeFirma()
         {
-            losDatos = new DatosDeUnCertificadoDigital();
-            losDatos.TipoDeIdentificacion = TipoDeIdentificacion.Dimex;
-            losDatos.TipoDeCertificado = TipoDeCertificado.Firma;
+            losDatos = new InformacionExtranjeraDeFirma();
             InicialiceUnaPersona();
         }
     }

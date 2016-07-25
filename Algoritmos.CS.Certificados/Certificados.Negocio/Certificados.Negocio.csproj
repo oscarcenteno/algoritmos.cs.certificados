@@ -42,13 +42,10 @@
   <ItemGroup>
     <Compile Include="GenerarCertificados\CertificadoDigital.cs" />
     <Compile Include="GenerarCertificados\DatosDeUnCertificadoDigital.cs" />
-    <Compile Include="GenerarCertificados\GeneracionDeCertificadosDigitales.cs" />
-    <Compile Include="GenerarCertificados\Sujeto.cs" />
     <Compile Include="GenerarCertificados\Sujetos\ApellidosEnMayusculas.cs" />
     <Compile Include="GenerarCertificados\Sujetos\ApellidosFormateados.cs" />
     <Compile Include="GenerarCertificados\Sujetos\CN.cs" />
     <Compile Include="GenerarCertificados\Sujetos\GeneracionDeSujetos.cs" />
-    <Compile Include="GenerarCertificados\Sujetos\Parameter Objects\InformacionDelSolicitante.cs" />
     <Compile Include="GenerarCertificados\Sujetos\Parameter Objects\InformacionExtranjera.cs" />
     <Compile Include="GenerarCertificados\Sujetos\Parameter Objects\InformacionExtranjeraDeAutenticacion.cs" />
     <Compile Include="GenerarCertificados\Sujetos\Parameter Objects\InformacionExtranjeraDeFirma.cs" />
@@ -57,11 +54,10 @@
     <Compile Include="GenerarCertificados\Sujetos\Parameter Objects\InformacionNacionalDeAutenticacion.cs" />
     <Compile Include="GenerarCertificados\Sujetos\Parameter Objects\InformacionNacionalDeFirma.cs" />
     <Compile Include="GenerarCertificados\Sujetos\SujetoFormateado.cs" />
-    <Compile Include="GenerarCertificados\TipoDeICertificado.cs" />
-    <Compile Include="GenerarCertificados\TipoDeIdentificacion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="GenerarCertificados\Herencia de parameter objects.cd" />
     <None Include="GenerarCertificados\Sujetos\Parameter Objects\HerenciaDeParameterObjects.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

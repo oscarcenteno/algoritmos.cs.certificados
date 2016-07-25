@@ -1,15 +1,17 @@
-﻿namespace Sujetos
+﻿using Certificados.Negocio.GenerarCertificados;
+
+namespace Sujetos
 {
     public class ApellidosFormateados
     {
         string losApellidosEnMayusculas;
 
-        public ApellidosFormateados(InformacionDelSolicitante laInformacion)
+        public ApellidosFormateados(DatosDeUnCertificadoDigital laInformacion)
         {
             losApellidosEnMayusculas = ObtengaLosApellidosEnMayusculas(laInformacion);
         }
 
-        private static string ObtengaLosApellidosEnMayusculas(InformacionDelSolicitante laInformacion)
+        private static string ObtengaLosApellidosEnMayusculas(DatosDeUnCertificadoDigital laInformacion)
         {
             return new ApellidosEnMayusculas(laInformacion).ComoTexto();
         }

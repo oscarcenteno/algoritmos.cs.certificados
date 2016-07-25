@@ -62,7 +62,6 @@
     <Compile Include="GenerarCertificados\Sujetos\CN\ComoTexto_Tests.cs" />
     <Compile Include="GenerarCertificados\Sujetos\GeneracionDeSujetos\GenereUnSujeto_Tests.cs" />
     <Compile Include="GenerarCertificados\Sujetos\SujetoFormateado\ComoTexto_Tests.cs" />
-    <Compile Include="GenerarCertificados\Sujeto\ComoTexto_Tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

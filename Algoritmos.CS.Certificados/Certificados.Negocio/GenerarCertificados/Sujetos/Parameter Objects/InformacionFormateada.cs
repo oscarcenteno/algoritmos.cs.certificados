@@ -1,6 +1,8 @@
-﻿namespace Sujetos
+﻿using Certificados.Negocio.GenerarCertificados;
+
+namespace Sujetos
 {
-    public abstract class InformacionFormateada : InformacionDelSolicitante
+    public abstract class InformacionFormateada : DatosDeUnCertificadoDigital
     {
         public string ApellidosFormateados
         {

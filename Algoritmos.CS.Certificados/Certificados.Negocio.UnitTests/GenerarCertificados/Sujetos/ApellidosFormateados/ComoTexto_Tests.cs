@@ -1,5 +1,6 @@
 ﻿using Sujetos;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Certificados.Negocio.GenerarCertificados;
 
 namespace Algoritmos.CS.Sujetos.UnitTests.ConPolimorfismo.ApellidosFormateados_Tests
 {
@@ -8,14 +9,14 @@ namespace Algoritmos.CS.Sujetos.UnitTests.ConPolimorfismo.ApellidosFormateados_T
     {
         private string elResultadoEsperado;
         private string elResultadoObtenido;
-        private InformacionDelSolicitante laInformacion;
+        private DatosDeUnCertificadoDigital laInformacion;
 
         [TestMethod]
         public void ComoTexto_NoTieneSegundoApellido_NoHayEspaciosAlFinal()
         {
             elResultadoEsperado = "GODINEZ";
 
-            laInformacion = new InformacionDelSolicitante();
+            laInformacion = new DatosDeUnCertificadoDigital();
             laInformacion.PrimerApellido = "Godinez";
             laInformacion.SegundoApellido = "";
             elResultadoObtenido = new ApellidosFormateados(laInformacion).ComoTexto();

@@ -1,5 +1,6 @@
 ﻿using Sujetos;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Certificados.Negocio.GenerarCertificados;
 
 namespace Algoritmos.CS.Sujetos.UnitTests.ConPolimorfismo.ApellidosEnMayusculas_Tests
 {
@@ -8,14 +9,14 @@ namespace Algoritmos.CS.Sujetos.UnitTests.ConPolimorfismo.ApellidosEnMayusculas_
     {
         private string elResultadoEsperado;
         private string elResultadoObtenido;
-        private InformacionDelSolicitante laInformacion;
+        private DatosDeUnCertificadoDigital laInformacion;
 
         [TestMethod]
         public void ComoTexto_DosApellidos_UnidosYEnMayuscula()
         {
             elResultadoEsperado = "GODINEZ SANCHEZ";
 
-            laInformacion = new InformacionDelSolicitante();
+            laInformacion = new DatosDeUnCertificadoDigital();
             laInformacion.PrimerApellido = "Godinez";
             laInformacion.SegundoApellido = "Sanchez";
             elResultadoObtenido = new ApellidosEnMayusculas(laInformacion).ComoTexto();
