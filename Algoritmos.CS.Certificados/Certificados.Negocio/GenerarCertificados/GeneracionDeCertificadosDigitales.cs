@@ -4,39 +4,26 @@ namespace Certificados.Negocio.GenerarCertificados
 {
     public static class GeneracionDeCertificadosDigitales
     {
-        public static CertificadoDigital GenereUnCertificadoDigital(string elNombre,
-            string elPrimerApellido,
-            string elSegundoApellido,
-            string laIdentificacion,
-            TipoDeIdentificacion elTipoDeIdentificacion,
-            TipoDeCertificado elTipoDeCertificado,
-            DateTime laFechaActual,
-            string laDireccionDeRevocacion,
-            int losAñosDeVigencia)
+        public static CertificadoDigital GenereUnCertificadoDigital(DatosDeUnCertificadoDigital losDatos)
         {
             CertificadoDigital elCertificado = new CertificadoDigital();
 
-            elCertificado.Sujeto = GenereElSujeto(elNombre, elPrimerApellido, elSegundoApellido, laIdentificacion, elTipoDeIdentificacion, elTipoDeCertificado);
-            elCertificado.FechaDeEmision = laFechaActual;
-            elCertificado.FechaDeVencimiento = GenereLaFechaDeVencimiento(laFechaActual, losAñosDeVigencia);
-            elCertificado.DireccionDeRevocacion = laDireccionDeRevocacion;
+            elCertificado.Sujeto = GenereElSujeto(losDatos);
+            elCertificado.FechaDeEmision = losDatos.FechaActual;
+            elCertificado.FechaDeVencimiento = GenereLaFechaDeVencimiento(losDatos);
+            elCertificado.DireccionDeRevocacion = losDatos.DireccionDeRevocacion;
 
             return elCertificado;
         }
 
-        private static string GenereElSujeto(string elNombre,
-            string elPrimerApellido,
-            string elSegundoApellido,
-            string laIdentificacion,
-            TipoDeIdentificacion elTipoDeIdentificacion,
-            TipoDeCertificado elTipoDeCertificado)
+        private static string GenereElSujeto(DatosDeUnCertificadoDigital losDatos)
         {
-            return new Sujeto(elNombre, elPrimerApellido, elSegundoApellido, laIdentificacion, elTipoDeIdentificacion, elTipoDeCertificado).ComoTexto();
+            return new Sujeto(losDatos).ComoTexto();
         }
         
-        private static DateTime GenereLaFechaDeVencimiento(DateTime laFechaActual, int losAñosDeVigencia)
+        private static DateTime GenereLaFechaDeVencimiento(DatosDeUnCertificadoDigital losDatos)
         {
-            return laFechaActual.AddYears(losAñosDeVigencia);
+            return losDatos.FechaDeVencimiento;
         }
     }
 }
