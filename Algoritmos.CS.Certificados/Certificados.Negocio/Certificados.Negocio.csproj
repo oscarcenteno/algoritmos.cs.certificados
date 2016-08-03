@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Mapeable">
+      <HintPath>..\Referencias\Mapeable.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -54,12 +57,19 @@
     <Compile Include="GenerarCertificados\Sujetos\Parameter Objects\InformacionNacionalDeAutenticacion.cs" />
     <Compile Include="GenerarCertificados\Sujetos\Parameter Objects\InformacionNacionalDeFirma.cs" />
     <Compile Include="GenerarCertificados\Sujetos\SujetoFormateado.cs" />
+    <Compile Include="GenerarEmision\7 ConInversionDeDependencias\CertificadoDeAutenticacion.cs" />
+    <Compile Include="GenerarEmision\7 ConInversionDeDependencias\CertificadoDeFirma.cs" />
+    <Compile Include="GenerarEmision\7 ConInversionDeDependencias\DatosDeLaEmision.cs" />
+    <Compile Include="GenerarEmision\7 ConInversionDeDependencias\DatosDeLaEmisionExtranjera.cs" />
+    <Compile Include="GenerarEmision\7 ConInversionDeDependencias\DatosDeLaEmisionNacional.cs" />
+    <Compile Include="GenerarEmision\7 ConInversionDeDependencias\Emision.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="GenerarCertificados\Herencia de parameter objects.cd" />
     <None Include="GenerarCertificados\Sujetos\Parameter Objects\HerenciaDeParameterObjects.cd" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
