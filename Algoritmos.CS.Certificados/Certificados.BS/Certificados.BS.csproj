@@ -43,41 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GenerarEmision\1 ComoUnProcedimiento\Emision.cs" />
-    <Compile Include="GenerarEmision\1 ComoUnProcedimiento\GeneracionDeEmision.cs" />
-    <Compile Include="GenerarEmision\1 ComoUnProcedimiento\TipoDeIdentificacion.cs" />
-    <Compile Include="GenerarEmision\3 ConObjetos\CertificadoDeAutenticacion.cs" />
-    <Compile Include="GenerarEmision\3 ConObjetos\CertificadoDeFirma.cs" />
-    <Compile Include="GenerarEmision\3 ConObjetos\Emision.cs" />
-    <Compile Include="GenerarEmision\3 ConObjetos\TipoDeIdentificacion.cs" />
-    <Compile Include="GenerarEmision\4 ConParameterObject\CertificadoDeAutenticacion.cs" />
-    <Compile Include="GenerarEmision\4 ConParameterObject\CertificadoDeFirma.cs" />
-    <Compile Include="GenerarEmision\4 ConParameterObject\DatosDeLaEmision.cs" />
-    <Compile Include="GenerarEmision\4 ConParameterObject\DatosDelSolicitante.cs" />
-    <Compile Include="GenerarEmision\4 ConParameterObject\Emision.cs" />
-    <Compile Include="GenerarEmision\4 ConParameterObject\TipoDeIdentificacion.cs" />
-    <Compile Include="GenerarEmision\6 ConPolimorfismo\CertificadoDeAutenticacion.cs" />
-    <Compile Include="GenerarEmision\6 ConPolimorfismo\CertificadoDeFirma.cs" />
-    <Compile Include="GenerarEmision\6 ConPolimorfismo\DatosDeLaEmision.cs" />
-    <Compile Include="GenerarEmision\6 ConPolimorfismo\DatosDeLaEmisionExtranjera.cs" />
-    <Compile Include="GenerarEmision\7 ConInversionDeDependencias\DatosDeLaEmisionExtranjeraConDependencias.cs" />
-    <Compile Include="GenerarEmision\6 ConPolimorfismo\DatosDeLaEmisionNacional.cs" />
-    <Compile Include="GenerarEmision\5 ConTellDontAsk\CertificadoDeAutenticacion.cs" />
-    <Compile Include="GenerarEmision\5 ConTellDontAsk\CertificadoDeFirma.cs" />
-    <Compile Include="GenerarEmision\5 ConTellDontAsk\DatosDeLaEmision.cs" />
-    <Compile Include="GenerarEmision\5 ConTellDontAsk\Emision.cs" />
-    <Compile Include="GenerarEmision\5 ConTellDontAsk\GeneracionDeEmision.cs" />
-    <Compile Include="GenerarEmision\4 ConParameterObject\EmisionConDependencias.cs" />
-    <Compile Include="GenerarEmision\4 ConParameterObject\GeneracionDeEmision.cs" />
-    <Compile Include="GenerarEmision\3 ConObjetos\EmisionConDependencias.cs" />
-    <Compile Include="GenerarEmision\3 ConObjetos\GeneracionDeEmision.cs" />
-    <Compile Include="GenerarEmision\2 ConFunciones\Emision.cs" />
-    <Compile Include="GenerarEmision\2 ConFunciones\GeneracionDeEmision.cs" />
-    <Compile Include="GenerarEmision\2 ConFunciones\TipoDeIdentificacion.cs" />
-    <Compile Include="GenerarEmision\5 ConTellDontAsk\TipoDeIdentificacion.cs" />
-    <Compile Include="GenerarEmision\7 ConInversionDeDependencias\DatosDeLaEmisionNacionalConDependencias.cs" />
-    <Compile Include="GenerarEmision\6 ConPolimorfismo\Emision.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegistrarEmision\ConObjetos\ProcesoDeEmision.cs" />
     <Compile Include="RegistrarEmision\ConFunciones\ProcesoDeEmision.cs" />
     <Compile Include="RegistrarEmision\ComoUnProcedimiento\ProcesoDeEmision.cs" />
   </ItemGroup>
@@ -90,6 +57,9 @@
       <Project>{d529b3f9-4b6d-41f0-bc8f-bee9ee7c497f}</Project>
       <Name>Certificados.Negocio</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="GenerarEmision\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

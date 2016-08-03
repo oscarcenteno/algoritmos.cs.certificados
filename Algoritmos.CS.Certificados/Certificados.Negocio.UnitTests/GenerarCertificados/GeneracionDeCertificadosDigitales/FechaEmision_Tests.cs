@@ -1,6 +1,5 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Certificados.Negocio.GenerarCertificados;
 
 namespace Certificados.Negocio.UnitTests.GenerarCertificados
 {

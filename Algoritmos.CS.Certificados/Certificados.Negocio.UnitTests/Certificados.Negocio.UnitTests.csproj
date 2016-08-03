@@ -61,11 +61,11 @@
     <Compile Include="GenerarCertificados\GeneracionDeCertificadosDigitales\Sujeto_Tests.cs" />
     <Compile Include="GenerarCertificados\GeneracionDeCertificadosDigitales\FechaEmision_Tests.cs" />
     <Compile Include="GenerarCertificados\GeneracionDeCertificadosDigitales\DireccionDeRevocacion_Tests.cs" />
-    <Compile Include="GenerarCertificados\Sujetos\ApellidosEnMayusculas\ComoTexto_Tests.cs" />
-    <Compile Include="GenerarCertificados\Sujetos\ApellidosFormateados\ComoTexto_Tests.cs" />
-    <Compile Include="GenerarCertificados\Sujetos\CN\ComoTexto_Tests.cs" />
-    <Compile Include="GenerarCertificados\Sujetos\GeneracionDeSujetos\GenereUnSujeto_Tests.cs" />
-    <Compile Include="GenerarCertificados\Sujetos\SujetoFormateado\ComoTexto_Tests.cs" />
+    <Compile Include="Sujetos\ApellidosEnMayusculas\ComoTexto_Tests.cs" />
+    <Compile Include="Sujetos\ApellidosFormateados\ComoTexto_Tests.cs" />
+    <Compile Include="Sujetos\CN\ComoTexto_Tests.cs" />
+    <Compile Include="Sujetos\GeneracionDeSujetos\GenereUnSujeto_Tests.cs" />
+    <Compile Include="Sujetos\SujetoFormateado\ComoTexto_Tests.cs" />
     <Compile Include="GenerarEmision\7 ConInversionDeDependencias\CertificadoDeAutenticacion_Tests\Generado_Tests.cs" />
     <Compile Include="GenerarEmision\7 ConInversionDeDependencias\CertificadoDeFirma_Tests\Generado_Tests.cs" />
     <Compile Include="GenerarEmision\7 ConInversionDeDependencias\Emision_Tests\CertificadoDeFirma_Tests.cs" />

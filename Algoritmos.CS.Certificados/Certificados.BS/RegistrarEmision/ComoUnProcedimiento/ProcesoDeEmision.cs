@@ -1,4 +1,4 @@
-﻿using Certificados.DS.RegistrarEmision;
+﻿using Certificados.DS.MapeosABaseDeDatos;
 using Certificados.Negocio.GenerarCertificados;
 using Certificados.Negocio.GenerarEmision.ConInversionDeDependencias;
 using Mapeable;

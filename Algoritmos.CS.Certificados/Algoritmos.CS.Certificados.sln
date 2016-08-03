@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Certificados.Negocio", "Cer
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Certificados.Negocio.UnitTests", "Certificados.Negocio.UnitTests\Certificados.Negocio.UnitTests.csproj", "{EBB7EAC9-C972-4AD0-ACAA-616D4A813476}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Certificados.BS", "Certificados.BS\Certificados.BS.csproj", "{109B0156-7580-4E68-8794-9D9A78C8674E}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Certificados.DS", "Certificados.DS\Certificados.DS.csproj", "{3E3A1154-82CF-4F15-9723-094C10464552}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Referencias", "Referencias", "{201BBA4D-CA21-4DFF-B893-C95E12D40E49}"
@@ -16,6 +14,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Referencias", "Referencias"
 		Referencias\Mapeable.ComparacionesParaPruebasUnitarias.dll = Referencias\Mapeable.ComparacionesParaPruebasUnitarias.dll
 		Referencias\Mapeable.dll = Referencias\Mapeable.dll
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Certificados.DS.UnitTests", "Certificados.DS.UnitTests\Certificados.DS.UnitTests.csproj", "{39046B32-3D4C-4239-A48A-93EB22219187}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,14 +31,14 @@ Global
 		{EBB7EAC9-C972-4AD0-ACAA-616D4A813476}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EBB7EAC9-C972-4AD0-ACAA-616D4A813476}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EBB7EAC9-C972-4AD0-ACAA-616D4A813476}.Release|Any CPU.Build.0 = Release|Any CPU
-		{109B0156-7580-4E68-8794-9D9A78C8674E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{109B0156-7580-4E68-8794-9D9A78C8674E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{109B0156-7580-4E68-8794-9D9A78C8674E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{109B0156-7580-4E68-8794-9D9A78C8674E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3E3A1154-82CF-4F15-9723-094C10464552}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3E3A1154-82CF-4F15-9723-094C10464552}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3E3A1154-82CF-4F15-9723-094C10464552}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3E3A1154-82CF-4F15-9723-094C10464552}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39046B32-3D4C-4239-A48A-93EB22219187}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39046B32-3D4C-4239-A48A-93EB22219187}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39046B32-3D4C-4239-A48A-93EB22219187}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39046B32-3D4C-4239-A48A-93EB22219187}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

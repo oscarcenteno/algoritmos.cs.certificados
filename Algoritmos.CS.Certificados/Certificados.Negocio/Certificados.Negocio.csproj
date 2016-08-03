@@ -45,18 +45,18 @@
   <ItemGroup>
     <Compile Include="GenerarCertificados\CertificadoDigital.cs" />
     <Compile Include="GenerarCertificados\DatosDeUnCertificadoDigital.cs" />
-    <Compile Include="GenerarCertificados\Sujetos\ApellidosEnMayusculas.cs" />
-    <Compile Include="GenerarCertificados\Sujetos\ApellidosFormateados.cs" />
-    <Compile Include="GenerarCertificados\Sujetos\CN.cs" />
-    <Compile Include="GenerarCertificados\Sujetos\GeneracionDeSujetos.cs" />
-    <Compile Include="GenerarCertificados\Sujetos\Parameter Objects\InformacionExtranjera.cs" />
-    <Compile Include="GenerarCertificados\Sujetos\Parameter Objects\InformacionExtranjeraDeAutenticacion.cs" />
-    <Compile Include="GenerarCertificados\Sujetos\Parameter Objects\InformacionExtranjeraDeFirma.cs" />
-    <Compile Include="GenerarCertificados\Sujetos\Parameter Objects\InformacionFormateada.cs" />
-    <Compile Include="GenerarCertificados\Sujetos\Parameter Objects\InformacionNacional.cs" />
-    <Compile Include="GenerarCertificados\Sujetos\Parameter Objects\InformacionNacionalDeAutenticacion.cs" />
-    <Compile Include="GenerarCertificados\Sujetos\Parameter Objects\InformacionNacionalDeFirma.cs" />
-    <Compile Include="GenerarCertificados\Sujetos\SujetoFormateado.cs" />
+    <Compile Include="Sujetos\ApellidosEnMayusculas.cs" />
+    <Compile Include="Sujetos\ApellidosFormateados.cs" />
+    <Compile Include="Sujetos\CN.cs" />
+    <Compile Include="Sujetos\GeneracionDeSujetos.cs" />
+    <Compile Include="Sujetos\Parameter Objects\InformacionExtranjera.cs" />
+    <Compile Include="Sujetos\Parameter Objects\InformacionExtranjeraDeAutenticacion.cs" />
+    <Compile Include="Sujetos\Parameter Objects\InformacionExtranjeraDeFirma.cs" />
+    <Compile Include="Sujetos\Parameter Objects\InformacionFormateada.cs" />
+    <Compile Include="Sujetos\Parameter Objects\InformacionNacional.cs" />
+    <Compile Include="Sujetos\Parameter Objects\InformacionNacionalDeAutenticacion.cs" />
+    <Compile Include="Sujetos\Parameter Objects\InformacionNacionalDeFirma.cs" />
+    <Compile Include="Sujetos\SujetoFormateado.cs" />
     <Compile Include="GenerarEmision\7 ConInversionDeDependencias\CertificadoDeAutenticacion.cs" />
     <Compile Include="GenerarEmision\7 ConInversionDeDependencias\CertificadoDeFirma.cs" />
     <Compile Include="GenerarEmision\7 ConInversionDeDependencias\DatosDeLaEmision.cs" />
@@ -67,7 +67,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="GenerarCertificados\Herencia de parameter objects.cd" />
-    <None Include="GenerarCertificados\Sujetos\Parameter Objects\HerenciaDeParameterObjects.cd" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
