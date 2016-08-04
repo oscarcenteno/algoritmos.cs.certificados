@@ -19,7 +19,7 @@ namespace WebApplication1.Controllers
             List<EmisionRealizadaVista> lasVistas;
             lasVistas = MapeoAEmisionesRealizadasVista.Mapee(losRegistros);
 
-            return View(losRegistros);
+            return View(lasVistas);
         }
 
         // GET: Certificados/Details/5
@@ -32,10 +32,10 @@ namespace WebApplication1.Controllers
 
             RegistroDeEmision elRegistro = RepositorioDeEmisiones.ObtengaPorId(id);
 
-            List<CertificadoEmitidoVista> losCertificados;
-            losCertificados = MapeoACertificadosEmitidosVista.Mapee(elRegistro);
+            List<CertificadoEmitidoVista> lasVistas;
+            lasVistas = MapeoACertificadosEmitidosVista.Mapee(elRegistro);
 
-            return View(losCertificados);
+            return View(lasVistas);
         }
 
         // GET: Certificados/EmitaANacional

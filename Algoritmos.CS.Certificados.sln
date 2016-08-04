@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Certificados.DS.UnitTests",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Certificados.DS", "Certificados.DS\Certificados.DS.csproj", "{F35D0865-E782-4F4A-AA82-AC4FA713952C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication1.UnitTests", "WebApplication1.UnitTests\WebApplication1.UnitTests.csproj", "{AC1CA62B-40A6-467D-A8F4-FB83D190FDA7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{F35D0865-E782-4F4A-AA82-AC4FA713952C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F35D0865-E782-4F4A-AA82-AC4FA713952C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F35D0865-E782-4F4A-AA82-AC4FA713952C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC1CA62B-40A6-467D-A8F4-FB83D190FDA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC1CA62B-40A6-467D-A8F4-FB83D190FDA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC1CA62B-40A6-467D-A8F4-FB83D190FDA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC1CA62B-40A6-467D-A8F4-FB83D190FDA7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
