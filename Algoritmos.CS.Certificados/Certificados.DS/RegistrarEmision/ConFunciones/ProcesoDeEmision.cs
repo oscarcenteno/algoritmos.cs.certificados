@@ -13,7 +13,7 @@ namespace Certificados.DS.RegistrarEmision.ConFunciones
             RegistroDeEmision elRegistro = GenereElRegistroDeLaEmision(losDatos);
 
             // Se guarda los registros en base de datos
-            new RepositorioDeEmision().Guarde(elRegistro);
+            new RepositorioDeEmisiones().Guarde(elRegistro);
         }
 
         private static RegistroDeEmision GenereElRegistroDeLaEmision(DatosDeLaEmision losDatos)

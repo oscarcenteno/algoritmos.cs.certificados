@@ -63,7 +63,6 @@
     <Folder Include="MapeosABaseDeDatos\RegistroDeCertificadoDeAutenticacion\" />
     <Folder Include="MapeosABaseDeDatos\RegistroDeCertificadoDeFirma\" />
     <Folder Include="MapeosABaseDeDatos\RegistroDeEmision\" />
-    <Folder Include="RegistrarEmision\" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

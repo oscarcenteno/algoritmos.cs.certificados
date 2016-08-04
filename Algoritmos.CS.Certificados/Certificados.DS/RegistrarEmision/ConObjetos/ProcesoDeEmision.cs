@@ -14,7 +14,7 @@ namespace Certificados.BS.RegistrarEmision.ConObjetos
 
         public void Ejecute()
         {
-            new RepositorioDeEmision().Guarde(elRegistro);
+            new RepositorioDeEmisiones().Guarde(elRegistro);
         }
     }
 }

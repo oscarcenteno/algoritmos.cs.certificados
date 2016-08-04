@@ -23,7 +23,7 @@ namespace Certificados.DS.RegistrarEmision.ComoUnProcedimiento
             elRegistro.CertificadoDeFirma = new Mapeo<CertificadoDigital, RegistroDeCertificado>().Mapee(elCertificadoDeFirma);
 
             // Se guarda los registros en base de datos
-            new RepositorioDeEmision().Guarde(elRegistro);
+            new RepositorioDeEmisiones().Guarde(elRegistro);
         }
     }
 }

@@ -5,7 +5,6 @@ using WebApplication1.Certificados.Emitir.RequestModels;
 using WebApplication1.Certificados.ConsultarLosCertificados.ViewModels;
 using WebApplication1.Certificados.ConsultarTodasLasEmisiones.ViewModels;
 using Certificados.BS.RegistrarEmision.ConObjetos;
-using Certificados.DS.Consultas;
 using Certificados.DS.MapeosABaseDeDatos;
 
 namespace WebApplication1.Controllers
@@ -15,25 +14,12 @@ namespace WebApplication1.Controllers
         // GET: Certificados
         public ActionResult Index()
         {
-            List<EmisionRealizadaVista> lasEmisiones = ObtengaLasEmisionesParaMostrar();
-            return View(lasEmisiones);
-        }
+            List<RegistroDeEmision> losRegistros = RepositorioDeEmisiones.ConsulteTodas();
 
-        private static List<EmisionRealizadaVista> ObtengaLasEmisionesParaMostrar()
-        {
-            List<RegistroDeEmision> lasEmisiones = ConsulteTodasLasEmisiones();
+            List<EmisionRealizadaVista> lasVistas;
+            lasVistas = MapeoAEmisionesRealizadasVista.Mapee(losRegistros);
 
-            return MapeeALaVista(lasEmisiones);
-        }
-
-        private static List<EmisionRealizadaVista> MapeeALaVista(List<RegistroDeEmision> lasEmisiones)
-        {
-            return MapeoAEmisionesRealizadasVista.Mapee(lasEmisiones);
-        }
-
-        private static List<RegistroDeEmision> ConsulteTodasLasEmisiones()
-        {
-            return RepositorioDeEmisiones.ConsulteTodas();
+            return View(losRegistros);
         }
 
         // GET: Certificados/Details/5
@@ -44,28 +30,12 @@ namespace WebApplication1.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
+            RegistroDeEmision elRegistro = RepositorioDeEmisiones.ObtengaPorId(id);
+
             List<CertificadoEmitidoVista> losCertificados;
-            losCertificados = ObtengaLosCertificados(id);
+            losCertificados = MapeoACertificadosEmitidosVista.Mapee(elRegistro);
 
             return View(losCertificados);
-        }
-
-        private static List<CertificadoEmitidoVista> ObtengaLosCertificados(int id)
-        {
-            RegistroDeEmision laEmision;
-            laEmision = ObtengaLaEmisionPorId(id);
-
-            return MapeeALaVista(laEmision);
-        }
-
-        private static RegistroDeEmision ObtengaLaEmisionPorId(int id)
-        {
-            return RepositorioDeEmisiones.ObtengaPorId(id);
-        }
-
-        private static List<CertificadoEmitidoVista> MapeeALaVista(RegistroDeEmision losCertificados)
-        {
-            return MapeoACertificadosEmitidosVista.Mapee(losCertificados);
         }
 
         // GET: Certificados/EmitaANacional

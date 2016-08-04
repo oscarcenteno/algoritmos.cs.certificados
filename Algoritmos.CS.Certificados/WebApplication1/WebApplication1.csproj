@@ -235,13 +235,13 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Certificados.DS\Certificados.DS.csproj">
+      <Project>{f35d0865-e782-4f4a-aa82-ac4fa713952c}</Project>
+      <Name>Certificados.DS</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Certificados.Negocio\Certificados.Negocio.csproj">
       <Project>{d529b3f9-4b6d-41f0-bc8f-bee9ee7c497f}</Project>
       <Name>Certificados.Negocio</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DS\DS.csproj">
-      <Project>{f35d0865-e782-4f4a-aa82-ac4fa713952c}</Project>
-      <Name>DS</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
