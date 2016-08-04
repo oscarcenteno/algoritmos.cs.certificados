@@ -16,6 +16,10 @@ namespace Certificados.Negocio.UnitTests.GenerarEmision.ConInversionDeDependenci
         [TestMethod]
         public void Generado_PersonaNacional_CertificadoNacionalDeAutenticacion()
         {
+            Assert.Inconclusive();
+
+
+
             elResultadoEsperado = InicialiceUnCertificadoNacionalDeAutenticacion();
 
             InicialiceLosDatosDeUnaEmisionNacional();
@@ -37,6 +41,7 @@ namespace Certificados.Negocio.UnitTests.GenerarEmision.ConInversionDeDependenci
         [TestMethod]
         public void Generado_PersonaExtranjera_CertificadoExtranjeroDeAutenticacion()
         {
+            Assert.Inconclusive();
             elResultadoEsperado = InicialiceUnCertificadoExtranjeroDeAutenticacion();
 
             InicialiceLosDatosDeUnaEmisionExtranjera();

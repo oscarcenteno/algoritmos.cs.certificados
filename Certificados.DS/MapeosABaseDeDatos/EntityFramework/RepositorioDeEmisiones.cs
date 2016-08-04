@@ -8,10 +8,10 @@ namespace Certificados.DS.MapeosABaseDeDatos
     { 
         public void Guarde(RegistroDeEmision elRegistroDeLaEmision)
         {
-            EmisionDBContext db = new EmisionDBContext();
-            DbSet<RegistroDeEmision> laTablaDeEmisiones = db.Emisiones;
+            EmisionDBContext elContexto = new EmisionDBContext();
+            DbSet<RegistroDeEmision> laTablaDeEmisiones = elContexto.Emisiones;
             laTablaDeEmisiones.Add(elRegistroDeLaEmision);
-            db.SaveChanges();
+            elContexto.SaveChanges();
         }
 
         public static List<RegistroDeEmision> ConsulteTodas()
