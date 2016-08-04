@@ -3,19 +3,25 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NSubstitute;
 using System;
 
-namespace Certificados.Negocio.UnitTests.GenerarEmision.ConInversionDeDependencias.CertificadoDeAutenticacion_Tests
+namespace Certificados.Negocio.UnitTests.GenerarEmision.ConInversionDeDependencias.Emision_Tests
 {
     [TestClass]
     public class FechaDeGeneracion_Tests
     {
+        private DateTime elResultadoEsperado;
+        private DateTime elResultadoObtenido;
+
         [TestMethod]
         public void TestMethod1()
         {
-            DatosDeLaEmision losDatos = Substitute.For<DatosDeLaEmision>();
-            DateTime laFecha = new DateTime(2016, 10, 11);
-            losDatos.FechaActual.Returns(laFecha);
+            elResultadoEsperado = new DateTime(2016, 10, 11);
 
-            Assert.AreEqual(laFecha, losDatos.FechaActual);
+            DatosDeLaEmisionNacional losDatos = Substitute.For<DatosDeLaEmisionNacional>();
+            losDatos.FechaActual.Returns(elResultadoEsperado);
+            Emision laEmision = new Emision(losDatos);
+            elResultadoObtenido = laEmision.FechaDeGeneracion;
+
+            Assert.AreEqual(elResultadoEsperado, elResultadoObtenido);
         }
     }
 }

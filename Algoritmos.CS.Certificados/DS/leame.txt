@@ -1,0 +1,4 @@
+﻿Escriba en el Package Manager Console:
+
+PM> Enable-Migrations -EnableAutomaticMigrations
+PM> Update-Database

@@ -50,20 +50,19 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="MapeosABaseDeDatos\UnitTest1.cs" />
+    <Compile Include="MapeosABaseDeDatos\MapeoDelRegistroDeEmision\UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Certificados.DS\Certificados.DS.csproj">
-      <Project>{3e3a1154-82cf-4f15-9723-094c10464552}</Project>
-      <Name>Certificados.DS</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Certificados.Negocio\Certificados.Negocio.csproj">
       <Project>{d529b3f9-4b6d-41f0-bc8f-bee9ee7c497f}</Project>
       <Name>Certificados.Negocio</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="MapeosABaseDeDatos\RegistroDeCertificadoDeAutenticacion\" />
+    <Folder Include="MapeosABaseDeDatos\RegistroDeCertificadoDeFirma\" />
+    <Folder Include="MapeosABaseDeDatos\RegistroDeEmision\" />
     <Folder Include="RegistrarEmision\" />
   </ItemGroup>
   <Choose>

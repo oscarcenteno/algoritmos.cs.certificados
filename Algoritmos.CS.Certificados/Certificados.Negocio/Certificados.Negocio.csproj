@@ -67,6 +67,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="GenerarCertificados\Herencia de parameter objects.cd" />
+    <None Include="GenerarEmision\7 ConInversionDeDependencias\Herencia de parameter objects.cd" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

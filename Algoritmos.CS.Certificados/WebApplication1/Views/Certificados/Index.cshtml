@@ -1,0 +1,38 @@
+﻿@model IEnumerable<WebApplication1.Certificados.ConsultarTodasLasEmisiones.ViewModels.EmisionRealizadaVista>
+
+@{
+    ViewBag.Title = "Emisiones realizadas";
+}
+
+<h2>Emisiones realizadas</h2>
+
+<p>
+    Emitir certificados a una persona
+    @Html.ActionLink("nacional", "EmitaANacional") |
+    @Html.ActionLink("extranjera", "EmitaAExtranjero")
+</p>
+<table class="table">
+    <tr>
+        <th>
+           # Id
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaDeGeneracion)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IDComoTexto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaDeGeneracion)
+        </td>
+        <td>
+            @Html.ActionLink("Certificados emitidos", "Details", new { id=item.ID })
+        </td>
+    </tr>
+}
+</table>

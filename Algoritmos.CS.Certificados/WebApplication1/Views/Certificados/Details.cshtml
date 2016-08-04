@@ -1,0 +1,44 @@
+﻿@model IEnumerable<WebApplication1.Certificados.ConsultarLosCertificados.ViewModels.CertificadoEmitidoVista>
+
+@{
+    ViewBag.Title = "Certificados emitidos";
+}
+
+<h2>Certificados emitidos</h2>
+<div>
+    <table class="table">
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Sujeto)
+            </th>
+            <th>@Html.DisplayNameFor(model => model.FechaDeEmisionFormateada)
+            </th>
+            <th>@Html.DisplayNameFor(model => model.FechaDeVencimientoFormateada)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DireccionDeRevocacion)
+        </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Sujeto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FechaDeEmisionFormateada)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FechaDeVencimientoFormateada)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DireccionDeRevocacion)
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+<p>
+    @Html.ActionLink("Regresar a la lista de emisiones realizadas", "Index")
+</p>

@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{EBB7EAC9-C972-4AD0-ACAA-616D4A813476}</ProjectGuid>
+    <ProjectGuid>{AC1CA62B-40A6-467D-A8F4-FB83D190FDA7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Certificados.Negocio.UnitTests</RootNamespace>
-    <AssemblyName>Certificados.Negocio.UnitTests</AssemblyName>
+    <RootNamespace>WebApplication1.UnitTests</RootNamespace>
+    <AssemblyName>WebApplication1.UnitTests</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -35,16 +35,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Mapeable, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Referencias\Mapeable.dll</HintPath>
-    </Reference>
     <Reference Include="Mapeable.ComparacionesParaPruebasUnitarias">
-      <HintPath>..\Referencias\Mapeable.ComparacionesParaPruebasUnitarias.dll</HintPath>
-    </Reference>
-    <Reference Include="NSubstitute, Version=1.10.0.0, Culture=neutral, PublicKeyToken=92dd2e9066daa5ca, processorArchitecture=MSIL">
-      <HintPath>..\packages\NSubstitute.1.10.0.0\lib\net45\NSubstitute.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\..\referencias\Mapeable.ComparacionesParaPruebasUnitarias.dll</HintPath>
     </Reference>
     <Reference Include="System" />
   </ItemGroup>
@@ -63,31 +55,29 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="GenerarCertificados\Escenarios.cs" />
-    <Compile Include="GenerarCertificados\GeneracionDeCertificadosDigitales\FechaDeVencimiento_Tests.cs" />
-    <Compile Include="GenerarCertificados\GeneracionDeCertificadosDigitales\Sujeto_Tests.cs" />
-    <Compile Include="GenerarCertificados\GeneracionDeCertificadosDigitales\FechaEmision_Tests.cs" />
-    <Compile Include="GenerarCertificados\GeneracionDeCertificadosDigitales\DireccionDeRevocacion_Tests.cs" />
-    <Compile Include="Sujetos\ApellidosEnMayusculas\ComoTexto_Tests.cs" />
-    <Compile Include="Sujetos\ApellidosFormateados\ComoTexto_Tests.cs" />
-    <Compile Include="Sujetos\CN\ComoTexto_Tests.cs" />
-    <Compile Include="Sujetos\GeneracionDeSujetos\GenereUnSujeto_Tests.cs" />
-    <Compile Include="Sujetos\SujetoFormateado\ComoTexto_Tests.cs" />
-    <Compile Include="GenerarEmision\7 ConInversionDeDependencias\CertificadoDeAutenticacion_Tests\Generado_Tests.cs" />
-    <Compile Include="GenerarEmision\7 ConInversionDeDependencias\CertificadoDeFirma_Tests\Generado_Tests.cs" />
-    <Compile Include="GenerarEmision\7 ConInversionDeDependencias\Emision_Tests\CertificadoDeFirma_Tests.cs" />
-    <Compile Include="GenerarEmision\7 ConInversionDeDependencias\Emision_Tests\CertificadoDeAutenticacion_Tests.cs" />
-    <Compile Include="GenerarEmision\7 ConInversionDeDependencias\Emision_Tests\FechaDeGeneracion_Tests.cs" />
+    <Compile Include="Certificados\Consultar los certificados\View Models\CertificadoEmitidoVista\FechaDeVencimientoFormateada_Tests.cs" />
+    <Compile Include="Certificados\Consultar los certificados\View Models\CertificadoEmitidoVista\FechaDeEmisionFormateada_Tests.cs" />
+    <Compile Include="Certificados\Consultar los certificados\View Models\MapeoACertificadosEmitidosVista.cs\Mapee_Tests.cs" />
+    <Compile Include="Certificados\Consultar todas las emisiones\View Models\EmisionRealizadaVista\IDComoTexto_Tests.cs" />
+    <Compile Include="Certificados\Consultar todas las emisiones\View Models\MapeoAEmisionesRealizadasVista\Mapee_Tests.cs" />
+    <Compile Include="Certificados\Emitir\RequestModels\DatosDelNacional\ComoSolicitante_Tests.cs" />
+    <Compile Include="Certificados\Emitir\RequestModels\DatosDelExtranjero\ComoSolicitante_Tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="..\Certificados.Negocio\Certificados.Negocio.csproj">
-      <Project>{d529b3f9-4b6d-41f0-bc8f-bee9ee7c497f}</Project>
-      <Name>Certificados.Negocio</Name>
+    <ProjectReference Include="..\..\BS\BS.csproj">
+      <Project>{88D8C147-3FBA-4D15-A498-B33193E55694}</Project>
+      <Name>BS</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
+    <ProjectReference Include="..\..\Negocio\Negocio.csproj">
+      <Project>{a2bfbcea-aaf7-4d09-9f75-c4eb6fa7d355}</Project>
+      <Name>Negocio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\WebApplication1\WebApplication1.csproj">
+      <Project>{81e520bb-c980-48f6-b5c7-a6dcac0503ba}</Project>
+      <Name>WebApplication1</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
