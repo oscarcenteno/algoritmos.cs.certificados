@@ -30,8 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Mapeable">
-      <HintPath>..\Referencias\Mapeable.dll</HintPath>
+    <Reference Include="Mapeable, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Mapeable.1.0.0.1\lib\net40\Mapeable.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -68,6 +69,7 @@
   <ItemGroup>
     <None Include="GenerarCertificados\Herencia de parameter objects.cd" />
     <None Include="GenerarEmision\7 ConInversionDeDependencias\Herencia de parameter objects.cd" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
