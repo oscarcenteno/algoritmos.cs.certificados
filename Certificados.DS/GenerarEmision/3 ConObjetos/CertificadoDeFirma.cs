@@ -10,12 +10,6 @@ namespace Certificados.DS.GenerarEmision.ConObjetos
 
         public CertificadoDeFirma(TipoDeIdentificacion elTipoDeIdentificacion, string laIdentificacion, string elNombre, string elPrimerApellido, string elSegundoApellido, string laDireccionDeRevocacion, int losAñosDeVigencia, DateTime laFechaActual)
         {
-            laInformacionDeFirma = GenereLaInformacionDeFirma(elTipoDeIdentificacion, laIdentificacion, elNombre, elPrimerApellido, elSegundoApellido, laDireccionDeRevocacion, losAñosDeVigencia, laFechaActual);
-        }
-
-        private static InformacionFormateada GenereLaInformacionDeFirma(TipoDeIdentificacion elTipoDeIdentificacion, string laIdentificacion, string elNombre, string elPrimerApellido, string elSegundoApellido, string laDireccionDeRevocacion, int losAñosDeVigencia, DateTime laFechaActual)
-        {
-            InformacionFormateada laInformacionDeFirma;
             laInformacionDeFirma = DetermineInformacionDeFirma(elTipoDeIdentificacion);
 
             laInformacionDeFirma.Nombre = elNombre;
@@ -25,8 +19,6 @@ namespace Certificados.DS.GenerarEmision.ConObjetos
             laInformacionDeFirma.FechaActual = laFechaActual;
             laInformacionDeFirma.DireccionDeRevocacion = laDireccionDeRevocacion;
             laInformacionDeFirma.AñosDeVigencia = losAñosDeVigencia;
-
-            return laInformacionDeFirma;
         }
 
         private static InformacionFormateada DetermineInformacionDeFirma(TipoDeIdentificacion elTipoDeIdentificacion)

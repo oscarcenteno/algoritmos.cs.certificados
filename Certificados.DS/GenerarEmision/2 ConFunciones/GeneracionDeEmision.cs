@@ -49,12 +49,12 @@ namespace Certificados.DS.GenerarEmision.ConFunciones
         private static CertificadoDigital ObtengaElCertificadoDeAutenticacion(TipoDeIdentificacion elTipoDeIdentificacion, string laIdentificacion, string elNombre, string elPrimerApellido, string elSegundoApellido, string laDireccionDeRevocacion, int losAñosDeVigencia, DateTime laFechaActual)
         {
             InformacionFormateada laInformacionDeAutenticacion;
-            laInformacionDeAutenticacion = GenereLaInformacionDeAutenticacion(elTipoDeIdentificacion, laIdentificacion, elNombre, elPrimerApellido, elSegundoApellido, laFechaActual);
+            laInformacionDeAutenticacion = GenereLaInformacionDeAutenticacion(elTipoDeIdentificacion, laIdentificacion, elNombre, elPrimerApellido, elSegundoApellido, laDireccionDeRevocacion, losAñosDeVigencia, laFechaActual);
 
             return new CertificadoDigital(laInformacionDeAutenticacion);
         }
 
-        private static InformacionFormateada GenereLaInformacionDeAutenticacion(TipoDeIdentificacion elTipoDeIdentificacion, string laIdentificacion, string elNombre, string elPrimerApellido, string elSegundoApellido, DateTime laFechaActual)
+        private static InformacionFormateada GenereLaInformacionDeAutenticacion(TipoDeIdentificacion elTipoDeIdentificacion, string laIdentificacion, string elNombre, string elPrimerApellido, string elSegundoApellido, string laDireccionDeRevocacion, int losAñosDeVigencia, DateTime laFechaActual)
         {
             InformacionFormateada laInformacionDeAutenticacion;
             laInformacionDeAutenticacion = DetermineInformacionDeAutenticacion(elTipoDeIdentificacion);
@@ -64,6 +64,8 @@ namespace Certificados.DS.GenerarEmision.ConFunciones
             laInformacionDeAutenticacion.PrimerApellido = elPrimerApellido;
             laInformacionDeAutenticacion.SegundoApellido = elSegundoApellido;
             laInformacionDeAutenticacion.FechaActual = laFechaActual;
+            laInformacionDeAutenticacion.DireccionDeRevocacion = laDireccionDeRevocacion;
+            laInformacionDeAutenticacion.AñosDeVigencia = losAñosDeVigencia;
 
             return laInformacionDeAutenticacion;
         }

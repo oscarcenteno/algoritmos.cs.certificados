@@ -9,20 +9,15 @@ namespace Certificados.DS.GenerarEmision.ConParameterObject
 
         public CertificadoDeAutenticacion(DatosDeLaEmision losDatosDeLaEmision)
         {
-            laInformacionDeAutenticacion = GenereLaInformacionDeAutenticacion(losDatosDeLaEmision);
-        }
-
-        private static InformacionFormateada GenereLaInformacionDeAutenticacion(DatosDeLaEmision losDatosDeLaEmision)
-        {
-            // TODO: Codigo procedimental. Se arreglara con tell dont ask
-            InformacionFormateada laInformacionDeAutenticacion = DetermineInformacionDeAutenticacion(losDatosDeLaEmision);
+            laInformacionDeAutenticacion = DetermineInformacionDeAutenticacion(losDatosDeLaEmision);
             laInformacionDeAutenticacion.Nombre = losDatosDeLaEmision.Nombre;
             laInformacionDeAutenticacion.Identificacion = losDatosDeLaEmision.Identificacion;
             laInformacionDeAutenticacion.PrimerApellido = losDatosDeLaEmision.PrimerApellido;
             laInformacionDeAutenticacion.SegundoApellido = losDatosDeLaEmision.SegundoApellido;
             laInformacionDeAutenticacion.FechaActual = losDatosDeLaEmision.FechaActual;
+            laInformacionDeAutenticacion.DireccionDeRevocacion = losDatosDeLaEmision.DireccionDeRevocacion;
+            laInformacionDeAutenticacion.AñosDeVigencia = losDatosDeLaEmision.AñosDeVigencia;
 
-            return laInformacionDeAutenticacion;
         }
 
         private static InformacionFormateada DetermineInformacionDeAutenticacion(DatosDeLaEmision losDatosDeLaEmision)

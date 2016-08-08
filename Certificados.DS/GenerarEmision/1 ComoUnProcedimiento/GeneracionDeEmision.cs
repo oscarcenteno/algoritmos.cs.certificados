@@ -34,6 +34,8 @@ namespace Certificados.DS.GenerarEmision.ComoUnProcedimiento
             laInformacionDeAutenticacion.PrimerApellido = elPrimerApellido;
             laInformacionDeAutenticacion.SegundoApellido = elSegundoApellido;
             laInformacionDeAutenticacion.FechaActual = laFechaActual;
+            laInformacionDeAutenticacion.DireccionDeRevocacion = laDireccionDeRevocacion;
+            laInformacionDeAutenticacion.AñosDeVigencia = losAñosDeVigencia;
 
             laEmision.CertificadoDeAutenticacion = new CertificadoDigital(laInformacionDeAutenticacion);
 

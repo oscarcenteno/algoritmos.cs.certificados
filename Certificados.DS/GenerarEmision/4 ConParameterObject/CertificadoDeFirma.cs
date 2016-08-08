@@ -9,14 +9,7 @@ namespace Certificados.DS.GenerarEmision.ConParameterObject
 
         public CertificadoDeFirma(DatosDeLaEmision losDatosDeLaEmision)
         {
-            laInformacionDeFirma = GenereLaInformacionDeFirma(losDatosDeLaEmision);
-        }
-
-        private static InformacionFormateada GenereLaInformacionDeFirma(DatosDeLaEmision losDatosDeLaEmision)
-        {
-            InformacionFormateada laInformacionDeFirma = DetermineInformacionDeFirma(losDatosDeLaEmision);
-
-            // TODO: Codigo procedimental. Se arreglara con tell dont ask
+            laInformacionDeFirma = DetermineInformacionDeFirma(losDatosDeLaEmision);
             laInformacionDeFirma.Nombre = losDatosDeLaEmision.Nombre;
             laInformacionDeFirma.Identificacion = losDatosDeLaEmision.Identificacion;
             laInformacionDeFirma.PrimerApellido = losDatosDeLaEmision.PrimerApellido;
@@ -24,8 +17,6 @@ namespace Certificados.DS.GenerarEmision.ConParameterObject
             laInformacionDeFirma.FechaActual = losDatosDeLaEmision.FechaActual;
             laInformacionDeFirma.DireccionDeRevocacion = losDatosDeLaEmision.DireccionDeRevocacion;
             laInformacionDeFirma.AñosDeVigencia = losDatosDeLaEmision.AñosDeVigencia;
-
-            return laInformacionDeFirma;
         }
 
         private static InformacionFormateada DetermineInformacionDeFirma(DatosDeLaEmision losDatosDeLaEmision)

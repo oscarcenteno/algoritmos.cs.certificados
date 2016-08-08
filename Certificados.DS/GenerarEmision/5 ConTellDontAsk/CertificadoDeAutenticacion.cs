@@ -9,14 +9,8 @@ namespace Certificados.DS.GenerarEmision.ConTellDontAsk
 
         public CertificadoDeAutenticacion(DatosDeLaEmision losDatosDeLaEmision)
         {
-            laInformacionDeAutenticacion = GenereLaInformacionDeAutenticacion(losDatosDeLaEmision);
-        }
+            laInformacionDeAutenticacion = losDatosDeLaEmision.InformacionDeAutenticacion;
 
-        private static InformacionFormateada GenereLaInformacionDeAutenticacion(DatosDeLaEmision losDatosDeLaEmision)
-        {
-            InformacionFormateada laInformacionDeAutenticacion = DetermineInformacionDeAutenticacion(losDatosDeLaEmision);
-
-            // TODO: Codigo procedimental.
             laInformacionDeAutenticacion.Nombre = losDatosDeLaEmision.Nombre;
             laInformacionDeAutenticacion.Identificacion = losDatosDeLaEmision.Identificacion;
             laInformacionDeAutenticacion.PrimerApellido = losDatosDeLaEmision.PrimerApellido;
@@ -24,13 +18,6 @@ namespace Certificados.DS.GenerarEmision.ConTellDontAsk
             laInformacionDeAutenticacion.FechaActual = losDatosDeLaEmision.FechaActual;
             laInformacionDeAutenticacion.DireccionDeRevocacion = losDatosDeLaEmision.DireccionDeRevocacion;
             laInformacionDeAutenticacion.AñosDeVigencia = losDatosDeLaEmision.AñosDeVigencia;
-
-            return laInformacionDeAutenticacion;
-        }
-
-        private static InformacionFormateada DetermineInformacionDeAutenticacion(DatosDeLaEmision losDatosDeLaEmision)
-        {
-            return losDatosDeLaEmision.InformacionDeAutenticacion;
         }
 
         public CertificadoDigital Generado()

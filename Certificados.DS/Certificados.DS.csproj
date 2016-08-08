@@ -74,7 +74,7 @@
     <Compile Include="GenerarEmision\4 ConParameterObject\CertificadoDeFirma.cs" />
     <Compile Include="GenerarEmision\4 ConParameterObject\Parameter Objects\DatosDeLaEmision.cs" />
     <Compile Include="GenerarEmision\4 ConParameterObject\Parameter Objects\DatosDelSolicitante.cs" />
-    <Compile Include="GenerarEmision\4 ConParameterObject\Parameter Objects\Emision.cs" />
+    <Compile Include="GenerarEmision\4 ConParameterObject\Emision.cs" />
     <Compile Include="GenerarEmision\4 ConParameterObject\EmisionConDependencias.cs" />
     <Compile Include="GenerarEmision\4 ConParameterObject\GeneracionDeEmision.cs" />
     <Compile Include="GenerarEmision\4 ConParameterObject\TipoDeIdentificacion.cs" />

@@ -8,14 +8,8 @@ namespace Certificados.DS.GenerarEmision.ConObjetos
     {
         InformacionFormateada laInformacionDeAutenticacion;
 
-        public CertificadoDeAutenticacion(TipoDeIdentificacion elTipoDeIdentificacion, string laIdentificacion, string elNombre, string elPrimerApellido, string elSegundoApellido, string laDireccionDeRevocacion, object losAñosDeVigencia, DateTime laFechaActual)
+        public CertificadoDeAutenticacion(TipoDeIdentificacion elTipoDeIdentificacion, string laIdentificacion, string elNombre, string elPrimerApellido, string elSegundoApellido, string laDireccionDeRevocacion, int losAñosDeVigencia, DateTime laFechaActual)
         {
-            laInformacionDeAutenticacion = GenereLaInformacionDeAutenticacion(elTipoDeIdentificacion, laIdentificacion, elNombre, elPrimerApellido, elSegundoApellido, laFechaActual);
-        }
-
-        private static InformacionFormateada GenereLaInformacionDeAutenticacion(TipoDeIdentificacion elTipoDeIdentificacion, string laIdentificacion, string elNombre, string elPrimerApellido, string elSegundoApellido, DateTime laFechaActual)
-        {
-            InformacionFormateada laInformacionDeAutenticacion;
             laInformacionDeAutenticacion = DetermineInformacionDeAutenticacion(elTipoDeIdentificacion);
 
             laInformacionDeAutenticacion.Nombre = elNombre;
@@ -23,8 +17,8 @@ namespace Certificados.DS.GenerarEmision.ConObjetos
             laInformacionDeAutenticacion.PrimerApellido = elPrimerApellido;
             laInformacionDeAutenticacion.SegundoApellido = elSegundoApellido;
             laInformacionDeAutenticacion.FechaActual = laFechaActual;
-
-            return laInformacionDeAutenticacion;
+            laInformacionDeAutenticacion.DireccionDeRevocacion = laDireccionDeRevocacion;
+            laInformacionDeAutenticacion.AñosDeVigencia = losAñosDeVigencia;
         }
 
         private static InformacionFormateada DetermineInformacionDeAutenticacion(TipoDeIdentificacion elTipoDeIdentificacion)
