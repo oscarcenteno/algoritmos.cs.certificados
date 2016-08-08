@@ -4,7 +4,7 @@ using System;
 
 namespace Certificados.DS.GenerarEmision.ConInversionDeDependencias
 {
-    public class DatosDeLaEmisionExtranjeraConDependencias: DatosDeLaEmisionNacional
+    public class DatosDeLaEmisionExtranjeraConDependencias: DatosDeLaEmisionExtranjera
     {
         public override int AñosDeVigencia
         {

@@ -60,15 +60,15 @@
     <Compile Include="Sujetos\SujetoFormateado.cs" />
     <Compile Include="GenerarEmision\7 ConInversionDeDependencias\CertificadoDeAutenticacion.cs" />
     <Compile Include="GenerarEmision\7 ConInversionDeDependencias\CertificadoDeFirma.cs" />
-    <Compile Include="GenerarEmision\7 ConInversionDeDependencias\DatosDeLaEmision.cs" />
-    <Compile Include="GenerarEmision\7 ConInversionDeDependencias\DatosDeLaEmisionExtranjera.cs" />
-    <Compile Include="GenerarEmision\7 ConInversionDeDependencias\DatosDeLaEmisionNacional.cs" />
+    <Compile Include="GenerarEmision\7 ConInversionDeDependencias\Parameter Objects\DatosDeLaEmision.cs" />
+    <Compile Include="GenerarEmision\7 ConInversionDeDependencias\Parameter Objects\DatosDeLaEmisionExtranjera.cs" />
+    <Compile Include="GenerarEmision\7 ConInversionDeDependencias\Parameter Objects\DatosDeLaEmisionNacional.cs" />
     <Compile Include="GenerarEmision\7 ConInversionDeDependencias\Emision.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="GenerarCertificados\Herencia de parameter objects.cd" />
-    <None Include="GenerarEmision\7 ConInversionDeDependencias\Herencia de parameter objects.cd" />
+    <None Include="GenerarEmision\7 ConInversionDeDependencias\Parameter Objects\Parameter Objects.cd" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />

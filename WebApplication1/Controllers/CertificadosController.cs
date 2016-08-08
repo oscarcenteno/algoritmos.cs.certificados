@@ -6,6 +6,7 @@ using WebApplication1.Certificados.ConsultarLosCertificados.ViewModels;
 using WebApplication1.Certificados.ConsultarTodasLasEmisiones.ViewModels;
 using Certificados.BS.RegistrarEmision.ConObjetos;
 using Certificados.DS.MapeosABaseDeDatos;
+using Certificados.DS.GenerarEmision.ConInversionDeDependencias;
 
 namespace WebApplication1.Controllers
 {
@@ -51,7 +52,8 @@ namespace WebApplication1.Controllers
         {
             if (ModelState.IsValid)
             {
-                var laSolicitud = losDatos.ComoObjeto();
+                DatosDeLaEmisionNacionalConDependencias laSolicitud;
+                laSolicitud = losDatos.ComoObjeto();
                 new ProcesoDeEmision(laSolicitud).Ejecute();
 
                 return RedirectToAction("Index");
@@ -73,7 +75,8 @@ namespace WebApplication1.Controllers
         {
             if (ModelState.IsValid)
             {
-                var laSolicitud = losDatos.ComoObjeto();
+                DatosDeLaEmisionExtranjeraConDependencias laSolicitud;
+                laSolicitud = losDatos.ComoObjeto();
                 new ProcesoDeEmision(laSolicitud).Ejecute();
 
                 return RedirectToAction("Index");

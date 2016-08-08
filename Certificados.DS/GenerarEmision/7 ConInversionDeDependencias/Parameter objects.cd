@@ -1,18 +1,30 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ClassDiagram MajorVersion="1" MinorVersion="1">
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
   <Class Name="Certificados.DS.GenerarEmision.ConInversionDeDependencias.DatosDeLaEmisionExtranjeraConDependencias">
-    <Position X="0.75" Y="1.5" Width="3.25" />
+    <Position X="0.5" Y="3.25" Width="3.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAAAAAAgAAAAAAAAAAAAQ=</HashCode>
       <FileName>GenerarEmision\7 ConInversionDeDependencias\DatosDeLaEmisionExtranjeraConDependencias.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Certificados.DS.GenerarEmision.ConInversionDeDependencias.DatosDeLaEmisionNacionalConDependencias">
-    <Position X="4.5" Y="1.5" Width="3.25" />
+    <Position X="4.5" Y="3.25" Width="3.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAAAAAAgAAAAAAAAAAAAQ=</HashCode>
       <FileName>GenerarEmision\7 ConInversionDeDependencias\DatosDeLaEmisionNacionalConDependencias.cs</FileName>
     </TypeIdentifier>
+  </Class>
+  <Class Name="Certificados.Negocio.GenerarEmision.ConInversionDeDependencias.DatosDeLaEmision" Collapsed="true">
+    <Position X="3.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Certificados.Negocio.GenerarEmision.ConInversionDeDependencias.DatosDeLaEmisionExtranjera" Collapsed="true">
+    <Position X="1" Y="1.75" Width="2" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Certificados.Negocio.GenerarEmision.ConInversionDeDependencias.DatosDeLaEmisionNacional" Collapsed="true">
+    <Position X="5" Y="1.75" Width="2" />
+    <TypeIdentifier />
   </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
