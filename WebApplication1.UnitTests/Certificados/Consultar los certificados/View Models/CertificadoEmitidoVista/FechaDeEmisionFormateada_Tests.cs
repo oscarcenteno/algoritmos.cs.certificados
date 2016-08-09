@@ -9,23 +9,23 @@ namespace WebApplication1.UnitTests.Certificados.Consultar_los_certificados.View
     {
         private string elResultadoEsperado;
         private string elResultadoObtenido;
-        private CertificadoEmitidoVista laVista;
-
-        [TestInitialize]
-        public void Inicialice()
-        {
-            laVista = new CertificadoEmitidoVista();
-            laVista.FechaDeEmision = new DateTime(2016, 12, 9);
-        }
+        private CertificadoVista laVista;
 
         [TestMethod]
         public void FechaDeEmisionFormateada_CasoUnico_ComoString()
         {
             elResultadoEsperado = "2016-12-09";
 
+            InicialiceLaVista();
             elResultadoObtenido = laVista.FechaDeEmisionFormateada;
 
             Assert.AreEqual(elResultadoEsperado, elResultadoObtenido);
+        }
+
+        private void InicialiceLaVista()
+        {
+            laVista = new CertificadoVista();
+            laVista.FechaDeEmision = new DateTime(2016, 12, 9);
         }
     }
 }

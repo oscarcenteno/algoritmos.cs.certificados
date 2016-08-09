@@ -9,7 +9,7 @@ namespace Certificados.Negocio.GenerarEmision.ConInversionDeDependencias
         {
             get
             {
-                return new Mapeo<DatosDeLaEmision, InformacionNacionalDeAutenticacion>().Mapee(this);
+                return new Mapeo<DatosDeLaEmisionNacional, InformacionNacionalDeAutenticacion>().Mapee(this);
             }
         }
 

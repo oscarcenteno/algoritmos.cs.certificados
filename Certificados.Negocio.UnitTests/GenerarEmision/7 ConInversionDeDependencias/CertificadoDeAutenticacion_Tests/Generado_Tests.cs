@@ -3,11 +3,13 @@ using Certificados.Negocio.GenerarCertificados;
 using Certificados.Negocio.GenerarEmision.ConInversionDeDependencias;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Mapeable.ComparacionesParaPruebasUnitarias;
+using Sujetos;
+using Certificados.Negocio.UnitTests.GenerarEmision_Tests.ConInversionDeDependencias_Tests;
 
 namespace Certificados.Negocio.UnitTests.GenerarEmision.ConInversionDeDependencias.CertificadoDeAutenticacion_Tests
 {
     [TestClass]
-    public class Generado_Tests
+    public class Generado_Tests : EscenariosDeDatosDeLaEmision
     {
         private CertificadoDigital elResultadoEsperado;
         private CertificadoDigital elResultadoObtenido;
@@ -16,48 +18,23 @@ namespace Certificados.Negocio.UnitTests.GenerarEmision.ConInversionDeDependenci
         [TestMethod]
         public void Generado_PersonaNacional_CertificadoNacionalDeAutenticacion()
         {
-            Assert.Inconclusive();
+            elResultadoEsperado = ObtengaUnCertificadoNacionalDeAutenticacion();
 
-
-
-            elResultadoEsperado = InicialiceUnCertificadoNacionalDeAutenticacion();
-
-            InicialiceLosDatosDeUnaEmisionNacional();
+            losDatos = ObtengaLosDatosDeUnaEmisionNacional();
             elResultadoObtenido = new CertificadoDeAutenticacion(losDatos).Generado();
 
             Verificacion.SonIguales(elResultadoEsperado, elResultadoObtenido);
-        }
-
-        private CertificadoDigital InicialiceUnCertificadoNacionalDeAutenticacion()
-        {
-            throw new NotImplementedException();
-        }
-
-        private void InicialiceLosDatosDeUnaEmisionNacional()
-        {
-            throw new NotImplementedException();
         }
 
         [TestMethod]
         public void Generado_PersonaExtranjera_CertificadoExtranjeroDeAutenticacion()
         {
-            Assert.Inconclusive();
-            elResultadoEsperado = InicialiceUnCertificadoExtranjeroDeAutenticacion();
+            elResultadoEsperado = ObtengaUnCertificadoExtranjeroDeAutenticacion();
 
-            InicialiceLosDatosDeUnaEmisionExtranjera();
+            losDatos = ObtengaLosDatosDeUnaEmisionExtranjera();
             elResultadoObtenido = new CertificadoDeAutenticacion(losDatos).Generado();
 
             Verificacion.SonIguales(elResultadoEsperado, elResultadoObtenido);
-        }
-
-        private CertificadoDigital InicialiceUnCertificadoExtranjeroDeAutenticacion()
-        {
-            throw new NotImplementedException();
-        }
-
-        private void InicialiceLosDatosDeUnaEmisionExtranjera()
-        {
-            throw new NotImplementedException();
         }
     }
 }

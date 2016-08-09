@@ -54,20 +54,30 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="MapeosABaseDeDatos\MapeoDelRegistroDeEmision\UnitTest1.cs" />
+    <Compile Include="MapeosABaseDeDatos\EscenariosDeLaEmision.cs" />
+    <Compile Include="MapeosABaseDeDatos\MapeoDelRegistroDeEmision\ComoRegistro_Tests.cs" />
+    <Compile Include="MapeosABaseDeDatos\RegistroDeCertificadoDeAutenticacion\Mapeado_Tests.cs" />
+    <Compile Include="MapeosABaseDeDatos\RegistroDeCertificadoDeFirma\Mapeado_Tests.cs" />
+    <Compile Include="MapeosABaseDeDatos\RegistroDeEmision\CertificadoDeAutenticacion_Tests.cs" />
+    <Compile Include="MapeosABaseDeDatos\RegistroDeEmision\CertificadoDeFirma_Tests.cs" />
+    <Compile Include="MapeosABaseDeDatos\RegistroDeEmision\FechaDeGeneracion_Tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Certificados.DS\Certificados.DS.csproj">
+      <Project>{f35d0865-e782-4f4a-aa82-ac4fa713952c}</Project>
+      <Name>Certificados.DS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Certificados.Negocio.UnitTests\Certificados.Negocio.UnitTests.csproj">
+      <Project>{ebb7eac9-c972-4ad0-acaa-616d4a813476}</Project>
+      <Name>Certificados.Negocio.UnitTests</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Certificados.Negocio\Certificados.Negocio.csproj">
       <Project>{d529b3f9-4b6d-41f0-bc8f-bee9ee7c497f}</Project>
       <Name>Certificados.Negocio</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="MapeosABaseDeDatos\RegistroDeCertificadoDeAutenticacion\" />
-    <Folder Include="MapeosABaseDeDatos\RegistroDeCertificadoDeFirma\" />
-    <Folder Include="MapeosABaseDeDatos\RegistroDeEmision\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>

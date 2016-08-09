@@ -3,7 +3,7 @@ using System.ComponentModel;
 
 namespace WebApplication1.Certificados.ConsultarLosCertificados.ViewModels
 {
-    public class CertificadoEmitidoVista
+    public class CertificadoVista
     {
         public DateTime FechaDeEmision { get; set; }
 

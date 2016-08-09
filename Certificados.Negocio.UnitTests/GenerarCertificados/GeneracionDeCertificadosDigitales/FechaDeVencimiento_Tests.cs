@@ -1,11 +1,13 @@
 ﻿using System;
+using Certificados.Negocio.GenerarCertificados;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Certificados.Negocio.UnitTests.GenerarCertificados
 {
     [TestClass]
-    public class FechaDeVencimiento_Tests : Escenarios
+    public class FechaDeVencimiento_Tests : EscenariosDeCertificados
     {
+        private CertificadoDigital elCertificado;
         private DateTime elResultadoEsperado;
         private DateTime elResultadoObtenido;
 
@@ -14,7 +16,7 @@ namespace Certificados.Negocio.UnitTests.GenerarCertificados
         {
             elResultadoEsperado = new DateTime(2020, 10, 11);
 
-            InicialiceEscenarioNacionalDeAutenticacion();
+            elCertificado = ObtengaUnCertificadoNacionalDeAutenticacion();
             elResultadoObtenido = elCertificado.FechaDeVencimiento;
 
             Assert.AreEqual(elResultadoEsperado, elResultadoObtenido);

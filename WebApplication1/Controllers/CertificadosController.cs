@@ -33,8 +33,8 @@ namespace WebApplication1.Controllers
 
             RegistroDeEmision elRegistro = RepositorioDeEmisiones.ObtengaPorId(id);
 
-            List<CertificadoEmitidoVista> lasVistas;
-            lasVistas = MapeoACertificadosEmitidosVista.Mapee(elRegistro);
+            List<CertificadoVista> lasVistas;
+            lasVistas = new MapeoACertificadosVista(elRegistro).ComoLista();
 
             return View(lasVistas);
         }

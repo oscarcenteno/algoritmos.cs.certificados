@@ -60,11 +60,12 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="GenerarCertificados\Escenarios.cs" />
+    <Compile Include="GenerarCertificados\EscenariosDeCertificados.cs" />
     <Compile Include="GenerarCertificados\GeneracionDeCertificadosDigitales\FechaDeVencimiento_Tests.cs" />
     <Compile Include="GenerarCertificados\GeneracionDeCertificadosDigitales\Sujeto_Tests.cs" />
     <Compile Include="GenerarCertificados\GeneracionDeCertificadosDigitales\FechaEmision_Tests.cs" />
     <Compile Include="GenerarCertificados\GeneracionDeCertificadosDigitales\DireccionDeRevocacion_Tests.cs" />
+    <Compile Include="GenerarEmision\7 ConInversionDeDependencias\EscenariosDeDatosDeLaEmision.cs" />
     <Compile Include="Sujetos\ApellidosEnMayusculas\ComoTexto_Tests.cs" />
     <Compile Include="Sujetos\ApellidosFormateados\ComoTexto_Tests.cs" />
     <Compile Include="Sujetos\CN\ComoTexto_Tests.cs" />

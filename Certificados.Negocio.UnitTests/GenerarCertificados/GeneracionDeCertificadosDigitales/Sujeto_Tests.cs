@@ -1,19 +1,21 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Certificados.Negocio.GenerarCertificados;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Certificados.Negocio.UnitTests.GenerarCertificados
 {
     [TestClass]
-    public class Sujeto_Tests : Escenarios
+    public class Sujeto_Tests : EscenariosDeCertificados
     {
         private string elResultadoEsperado;
         private string elResultadoObtenido;
+        private CertificadoDigital elCertificado;
 
         [TestMethod]
         public void Sujeto_NacionalDeAutenticacion_SujetoFormateado()
         {
             elResultadoEsperado = "CN=MIGUEL SUAREZ GODINEZ (AUTENTICACION), OU=CIUDADANO, O=PERSONA FISICA, C=CR, GivenName=MIGUEL, Surname=SUAREZ GODINEZ, SERIALNUMBER=CPF-3034560333";
 
-            InicialiceEscenarioNacionalDeAutenticacion();
+            elCertificado = ObtengaUnCertificadoNacionalDeAutenticacion();
             elResultadoObtenido = elCertificado.Sujeto;
 
             Assert.AreEqual(elResultadoEsperado, elResultadoObtenido);
@@ -24,7 +26,7 @@ namespace Certificados.Negocio.UnitTests.GenerarCertificados
         {
             elResultadoEsperado = "CN=MIGUEL SUAREZ GODINEZ (FIRMA), OU=CIUDADANO, O=PERSONA FISICA, C=CR, GivenName=MIGUEL, Surname=SUAREZ GODINEZ, SERIALNUMBER=CPF-3034560333";
 
-            InicialiceEscenarioNacionalDeFirma();
+            elCertificado = ObtengaUnCertificadoNacionalDeFirma();
             elResultadoObtenido = elCertificado.Sujeto;
 
             Assert.AreEqual(elResultadoEsperado, elResultadoObtenido);
@@ -35,7 +37,7 @@ namespace Certificados.Negocio.UnitTests.GenerarCertificados
         {
             elResultadoEsperado = "CN=MIGUEL SUAREZ GODINEZ (AUTENTICACION), OU=EXTRANJERO, O=PERSONA FISICA, C=CR, GivenName=MIGUEL, Surname=SUAREZ GODINEZ, SERIALNUMBER=NUP-3034560333";
 
-            InicialiceEscenarioExtranjeroDeAutenticacion();
+            elCertificado = ObtengaUnCertificadoExtranjeroDeAutenticacion();
             elResultadoObtenido = elCertificado.Sujeto;
 
             Assert.AreEqual(elResultadoEsperado, elResultadoObtenido);
@@ -46,7 +48,7 @@ namespace Certificados.Negocio.UnitTests.GenerarCertificados
         {
             elResultadoEsperado = "CN=MIGUEL SUAREZ GODINEZ (FIRMA), OU=EXTRANJERO, O=PERSONA FISICA, C=CR, GivenName=MIGUEL, Surname=SUAREZ GODINEZ, SERIALNUMBER=NUP-3034560333";
 
-            InicialiceEscenarioExtranjeroDeFirma();
+            elCertificado = ObtengaUnCertificadoExtranjeroDeFirma();
             elResultadoObtenido = elCertificado.Sujeto;
 
             Assert.AreEqual(elResultadoEsperado, elResultadoObtenido);

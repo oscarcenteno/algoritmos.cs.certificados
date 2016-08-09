@@ -1,11 +1,13 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Certificados.Negocio.GenerarCertificados;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Certificados.Negocio.UnitTests.GenerarCertificados
 {
     [TestClass]
 
-    public class GenereUnCertificadoDigital_Tests:Escenarios
+    public class GenereUnCertificadoDigital_Tests:EscenariosDeCertificados
     {
+        private CertificadoDigital elCertificado;
         private string elResultadoEsperado;
         private string elResultadoObtenido;
 
@@ -14,7 +16,7 @@ namespace Certificados.Negocio.UnitTests.GenerarCertificados
         {
             elResultadoEsperado = "http://direccionderevocacion.com";
 
-            InicialiceEscenarioNacionalDeAutenticacion();
+            elCertificado = ObtengaUnCertificadoNacionalDeAutenticacion();
             elResultadoObtenido = elCertificado.DireccionDeRevocacion;
 
             Assert.AreEqual(elResultadoEsperado, elResultadoObtenido);

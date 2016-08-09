@@ -61,8 +61,8 @@
     <Compile Include="Certificados\Consultar los certificados\View Models\MapeoACertificadosEmitidosVista.cs\Mapee_Tests.cs" />
     <Compile Include="Certificados\Consultar todas las emisiones\View Models\EmisionRealizadaVista\IDComoTexto_Tests.cs" />
     <Compile Include="Certificados\Consultar todas las emisiones\View Models\MapeoAEmisionesRealizadasVista\Mapee_Tests.cs" />
-    <Compile Include="Certificados\Emitir\RequestModels\DatosDelNacional\ComoSolicitante_Tests.cs" />
-    <Compile Include="Certificados\Emitir\RequestModels\DatosDelExtranjero\ComoSolicitante_Tests.cs" />
+    <Compile Include="Certificados\Emitir\RequestModels\DatosDelNacional\ComoObjeto_Tests.cs" />
+    <Compile Include="Certificados\Emitir\RequestModels\DatosDelExtranjero\ComoObjeto_Tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -70,6 +70,14 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Certificados.DS\Certificados.DS.csproj">
+      <Project>{f35d0865-e782-4f4a-aa82-ac4fa713952c}</Project>
+      <Name>Certificados.DS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Certificados.Negocio\Certificados.Negocio.csproj">
+      <Project>{d529b3f9-4b6d-41f0-bc8f-bee9ee7c497f}</Project>
+      <Name>Certificados.Negocio</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WebApplication1\WebApplication1.csproj">
       <Project>{81e520bb-c980-48f6-b5c7-a6dcac0503ba}</Project>
       <Name>WebApplication1</Name>

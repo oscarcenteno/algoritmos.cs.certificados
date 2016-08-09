@@ -96,7 +96,7 @@
     <Compile Include="MapeosABaseDeDatos\EntityFramework\RegistroDeCertificado.cs" />
     <Compile Include="MapeosABaseDeDatos\RegistroDeCertificadoDeAutenticacion.cs" />
     <Compile Include="MapeosABaseDeDatos\RegistroDeCertificadoDeFirma.cs" />
-    <Compile Include="MapeosABaseDeDatos\EntityFramework\RegistroDeEmision.cs" />
+    <Compile Include="MapeosABaseDeDatos\RegistroDeEmision.cs" />
     <Compile Include="MapeosABaseDeDatos\Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegistrarEmision\ComoUnProcedimiento\ProcesoDeEmision.cs" />

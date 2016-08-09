@@ -10,21 +10,21 @@ namespace WebApplication1.UnitTests.Certificados.Consultar_los_certificados.View
         private string elResultadoObtenido;
         private EmisionRealizadaVista laVista;
 
-        [TestInitialize]
-        public void Inicialice()
-        {
-            laVista = new EmisionRealizadaVista();
-            laVista.ID = 987;
-        }
-
         [TestMethod]
         public void IDComoTexto_CasoUnico_ComoString()
         {
             elResultadoEsperado = "987";
 
+            InicialiceLaVista();
             elResultadoObtenido = laVista.IDComoTexto;
 
             Assert.AreEqual(elResultadoEsperado, elResultadoObtenido);
+        }
+
+        private void InicialiceLaVista()
+        {
+            laVista = new EmisionRealizadaVista();
+            laVista.ID = 987;
         }
     }
 }
