@@ -3,6 +3,7 @@ using Certificados.Negocio.GenerarCertificados;
 using Certificados.Negocio.GenerarEmision.ConInversionDeDependencias;
 using Mapeable;
 using Certificados.DS.MapeosABaseDeDatos;
+using Certificados.Negocio.GenerarCertificados.ConPolimorfismo;
 
 namespace Certificados.DS.RegistrarEmision.ConFunciones
 {

@@ -1,8 +1,8 @@
-﻿using Certificados.Negocio.GenerarCertificados;
+﻿using Certificados.Negocio.GenerarCertificados.ConPolimorfismo;
 using Sujetos;
 using System;
 
-namespace Certificados.Negocio.UnitTests.GenerarCertificados
+namespace Certificados.Negocio.UnitTests.GenerarCertificados.ConPolimorfismo
 {
     public class EscenariosDeCertificados
     {

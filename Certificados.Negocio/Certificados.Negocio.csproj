@@ -44,8 +44,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GenerarCertificados\CertificadoDigital.cs" />
-    <Compile Include="GenerarCertificados\DatosDeUnCertificadoDigital.cs" />
+    <Compile Include="GenerarCertificados\1 ComoUnProcedimiento\CertificadoDigital.cs" />
+    <Compile Include="GenerarCertificados\1 ComoUnProcedimiento\GeneracionDeCertificadosDigitales.cs" />
+    <Compile Include="GenerarCertificados\1 ComoUnProcedimiento\TipoDeCertificado.cs" />
+    <Compile Include="GenerarCertificados\1 ComoUnProcedimiento\TipoDeIdentificacion.cs" />
+    <Compile Include="GenerarCertificados\2 ConFunciones\CertificadoDigital.cs" />
+    <Compile Include="GenerarCertificados\2 ConFunciones\GeneracionDeCertificadosDigitales.cs" />
+    <Compile Include="GenerarCertificados\2 ConFunciones\TipoDeCertificado.cs" />
+    <Compile Include="GenerarCertificados\2 ConFunciones\TipoDeIdentificacion.cs" />
+    <Compile Include="GenerarCertificados\6 ConPolimorfismo\CertificadoDigital.cs" />
+    <Compile Include="GenerarCertificados\6 ConPolimorfismo\DatosDeUnCertificadoDigital.cs" />
     <Compile Include="Sujetos\ApellidosEnMayusculas.cs" />
     <Compile Include="Sujetos\ApellidosFormateados.cs" />
     <Compile Include="Sujetos\CN.cs" />
@@ -67,11 +75,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="GenerarCertificados\Herencia de parameter objects.cd" />
+    <None Include="GenerarCertificados\6 ConPolimorfismo\Herencia de parameter objects.cd" />
     <None Include="GenerarEmision\7 ConInversionDeDependencias\Parameter Objects\Parameter Objects.cd" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="GenerarCertificados\3 ConObjetos\" />
+    <Folder Include="GenerarCertificados\4 ConParameterObject\" />
+    <Folder Include="GenerarCertificados\5 Con TellDontAsk\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

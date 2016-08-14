@@ -1,6 +1,6 @@
 ﻿using Sujetos;
 using System;
-using Certificados.Negocio.GenerarCertificados;
+using Certificados.Negocio.GenerarCertificados.ConPolimorfismo;
 
 namespace Certificados.DS.GenerarEmision.ConObjetos
 {

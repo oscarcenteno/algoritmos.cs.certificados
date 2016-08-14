@@ -5,6 +5,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Mapeable.ComparacionesParaPruebasUnitarias;
 using Sujetos;
 using Certificados.Negocio.UnitTests.GenerarEmision_Tests.ConInversionDeDependencias_Tests;
+using Certificados.Negocio.GenerarCertificados.ConPolimorfismo;
 
 namespace Certificados.Negocio.UnitTests.GenerarEmision.ConInversionDeDependencias.CertificadoDeFirma_Tests
 {

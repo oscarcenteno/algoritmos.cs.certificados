@@ -1,8 +1,6 @@
-﻿using Certificados.Negocio.GenerarCertificados;
-using Certificados.Negocio.GenerarEmision.ConInversionDeDependencias;
-using Certificados.Negocio.UnitTests.GenerarCertificados;
+﻿using Certificados.Negocio.GenerarEmision.ConInversionDeDependencias;
+using Certificados.Negocio.UnitTests.GenerarCertificados.ConPolimorfismo;
 using NSubstitute;
-using Sujetos;
 using System;
 
 namespace Certificados.Negocio.UnitTests.GenerarEmision_Tests.ConInversionDeDependencias_Tests

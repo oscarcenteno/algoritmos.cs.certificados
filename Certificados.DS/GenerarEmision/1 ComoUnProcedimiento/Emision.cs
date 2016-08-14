@@ -1,4 +1,4 @@
-﻿using Certificados.Negocio.GenerarCertificados;
+﻿using Certificados.Negocio.GenerarCertificados.ConPolimorfismo;
 using System;
 
 namespace Certificados.DS.GenerarEmision.ComoUnProcedimiento

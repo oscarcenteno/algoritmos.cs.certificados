@@ -1,7 +1,7 @@
 ﻿using System;
 using Sujetos;
 
-namespace Certificados.Negocio.GenerarCertificados
+namespace Certificados.Negocio.GenerarCertificados.ConPolimorfismo
 {
     public class CertificadoDigital
     {

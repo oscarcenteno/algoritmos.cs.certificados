@@ -1,8 +1,8 @@
 ﻿using System;
-using Certificados.Negocio.GenerarCertificados;
+using Certificados.Negocio.GenerarCertificados.ConPolimorfismo;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Certificados.Negocio.UnitTests.GenerarCertificados
+namespace Certificados.Negocio.UnitTests.GenerarCertificados.ConPolimorfismo
 {
     [TestClass]
     public class FechaDeVencimiento_Tests : EscenariosDeCertificados

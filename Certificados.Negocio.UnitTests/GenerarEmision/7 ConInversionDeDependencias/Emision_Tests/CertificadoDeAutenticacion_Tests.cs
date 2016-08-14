@@ -3,6 +3,7 @@ using Certificados.Negocio.GenerarEmision.ConInversionDeDependencias;
 using Certificados.Negocio.UnitTests.GenerarEmision_Tests.ConInversionDeDependencias_Tests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Mapeable.ComparacionesParaPruebasUnitarias;
+using Certificados.Negocio.GenerarCertificados.ConPolimorfismo;
 
 namespace Certificados.Negocio.UnitTests.GenerarEmision._7_ConInversionDeDependencias.CertificadoDeAutenticacion_Tests
 {

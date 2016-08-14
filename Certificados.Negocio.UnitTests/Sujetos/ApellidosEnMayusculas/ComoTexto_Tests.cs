@@ -1,6 +1,6 @@
 ﻿using Sujetos;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Certificados.Negocio.GenerarCertificados;
+using Certificados.Negocio.GenerarCertificados.ConPolimorfismo;
 
 namespace Algoritmos.CS.Sujetos.UnitTests.ConPolimorfismo.ApellidosEnMayusculas_Tests
 {

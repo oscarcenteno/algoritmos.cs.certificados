@@ -1,4 +1,4 @@
-﻿using Certificados.Negocio.GenerarCertificados;
+﻿using Certificados.Negocio.GenerarCertificados.ConPolimorfismo;
 using Certificados.Negocio.GenerarEmision.ConInversionDeDependencias;
 using Mapeable;
 

@@ -1,0 +1,21 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Diagrama de objetos principales.pptx
+*.user
+/packages
+/.vs
+/Certificados.DS/bin/Debug
+/Certificados.DS/obj/Debug
+/Certificados.DS.UnitTests/bin/Debug
+/Certificados.DS.UnitTests/obj/Debug
+/Certificados.Negocio/obj/Debug
+/Certificados.Negocio/bin
+/Certificados.Negocio.UnitTests/bin/Debug
+/Certificados.Negocio.UnitTests/obj/Debug
+/WebApplication1/App_Data
+/WebApplication1/bin
+/WebApplication1/obj/Debug
+/WebApplication1.UnitTests/bin/Debug
+/WebApplication1.UnitTests/obj/Debug

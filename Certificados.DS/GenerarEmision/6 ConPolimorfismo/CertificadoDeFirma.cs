@@ -1,5 +1,5 @@
 ﻿using Sujetos;
-using Certificados.Negocio.GenerarCertificados;
+using Certificados.Negocio.GenerarCertificados.ConPolimorfismo;
 
 namespace Certificados.DS.GenerarEmision.ConPolimorfismo
 {

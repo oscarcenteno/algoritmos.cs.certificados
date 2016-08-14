@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Certificados.Negocio.GenerarCertificados
+namespace Certificados.Negocio.GenerarCertificados.ConPolimorfismo
 {
     public class DatosDeUnCertificadoDigital
     {
