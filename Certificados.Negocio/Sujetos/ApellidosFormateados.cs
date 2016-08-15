@@ -6,12 +6,12 @@ namespace Sujetos
     {
         string losApellidosEnMayusculas;
 
-        public ApellidosFormateados(DatosDeUnCertificadoDigital laInformacion)
+        public ApellidosFormateados(InformacionFormateada laInformacion)
         {
             losApellidosEnMayusculas = ObtengaLosApellidosEnMayusculas(laInformacion);
         }
 
-        private static string ObtengaLosApellidosEnMayusculas(DatosDeUnCertificadoDigital laInformacion)
+        private static string ObtengaLosApellidosEnMayusculas(InformacionFormateada laInformacion)
         {
             return new ApellidosEnMayusculas(laInformacion).ComoTexto();
         }

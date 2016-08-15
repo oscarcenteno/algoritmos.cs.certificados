@@ -5,40 +5,35 @@ namespace Certificados.DS.GenerarEmision.ConTellDontAsk
 {
     public class Emision
     {
-        private DateTime laFechaActual;
-        private CertificadoDigital elCertificadoDeAutenticacion;
-        private CertificadoDigital elCertificadoDeFirma;
+        DatosDeLaEmision losDatos;
 
-        public Emision(DatosDeLaEmision losDatosDeLaEmision)
+        public Emision(DatosDeLaEmision losDatos)
         {
-            laFechaActual = losDatosDeLaEmision.FechaActual;
-            elCertificadoDeAutenticacion = ObtengaElCertificadoDeAutenticacion(losDatosDeLaEmision);
-            elCertificadoDeFirma = ObtengaElCertificadoDeFirma(losDatosDeLaEmision);
-        }
-
-        private static CertificadoDigital ObtengaElCertificadoDeAutenticacion(DatosDeLaEmision losDatosDeLaEmision)
-        {
-            return new CertificadoDeAutenticacion(losDatosDeLaEmision).Generado();
-        }
-
-        private static CertificadoDigital ObtengaElCertificadoDeFirma(DatosDeLaEmision losDatosDeLaEmision)
-        {
-            return new CertificadoDeFirma(losDatosDeLaEmision).Generado();
+            this.losDatos = losDatos;
         }
 
         public DateTime FechaDeGeneracion
         {
-            get { return laFechaActual; }
+            get
+            {
+                return losDatos.FechaActual;
+            }
         }
 
         public CertificadoDigital CertificadoDeAutenticacion
         {
-            get { return elCertificadoDeAutenticacion; }
+            get
+            {
+                return new CertificadoDeAutenticacion(losDatos).Generado();
+            }
         }
 
         public CertificadoDigital CertificadoDeFirma
         {
-            get { return elCertificadoDeFirma; }
+            get
+            {
+                return new CertificadoDeFirma(losDatos).Generado();
+            }
         }
     }
 }

@@ -17,7 +17,7 @@ namespace Certificados.Negocio.GenerarCertificados.ConFunciones
         {
             CertificadoDigital elCertificado = new CertificadoDigital();
 
-            elCertificado.Sujeto = ObtengaElSujeto(elNombre, elPrimerApellido, elSegundoApellido, laIdentificacion, elTipoDeIdentificacion, elTipoDeCertificado);
+            elCertificado.Sujeto = GenereElSujeto(elNombre, elPrimerApellido, elSegundoApellido, laIdentificacion, elTipoDeIdentificacion, elTipoDeCertificado);
             elCertificado.FechaDeEmision = laFechaActual;
             elCertificado.FechaDeVencimiento = GenereLaFechaDeVencimiento(laFechaActual, losAñosDeVigencia);
             elCertificado.DireccionDeRevocacion = laDireccionDeRevocacion;
@@ -25,32 +25,43 @@ namespace Certificados.Negocio.GenerarCertificados.ConFunciones
             return elCertificado;
         }
 
-        private static string ObtengaElSujeto(string elNombre, string elPrimerApellido, string elSegundoApellido, string laIdentificacion, TipoDeIdentificacion elTipoDeIdentificacion, TipoDeCertificado elTipoDeCertificado)
+        private static string GenereElSujeto(string elNombre, 
+            string elPrimerApellido, 
+            string elSegundoApellido, 
+            string laIdentificacion, 
+            TipoDeIdentificacion elTipoDeIdentificacion, 
+            TipoDeCertificado elTipoDeCertificado)
         {
-            InformacionFormateada laInformacion;
-            laInformacion = DetermineElTipoDeInformacion(elTipoDeIdentificacion, elTipoDeCertificado);
+            InformacionFormateada laInformacion = ObtengaLaInformacionFormateada(elNombre, elPrimerApellido, elSegundoApellido, laIdentificacion, elTipoDeIdentificacion, elTipoDeCertificado);
+
+            return GenereElSujetoFormateado(laInformacion);
+        }
+
+        private static InformacionFormateada ObtengaLaInformacionFormateada(string elNombre, string elPrimerApellido, string elSegundoApellido, string laIdentificacion, TipoDeIdentificacion elTipoDeIdentificacion, TipoDeCertificado elTipoDeCertificado)
+        {
+            InformacionFormateada laInformacion = ObtengaLaInformacionFormateada(elTipoDeIdentificacion, elTipoDeCertificado);
             laInformacion.Nombre = elNombre;
             laInformacion.PrimerApellido = elPrimerApellido;
             laInformacion.SegundoApellido = elSegundoApellido;
             laInformacion.Identificacion = laIdentificacion;
 
-            return GenereElSujeto(laInformacion);
+            return laInformacion;
         }
 
-        private static InformacionFormateada DetermineElTipoDeInformacion(TipoDeIdentificacion elTipoDeIdentificacion, TipoDeCertificado elTipoDeCertificado)
+        private static InformacionFormateada ObtengaLaInformacionFormateada(TipoDeIdentificacion elTipoDeIdentificacion, TipoDeCertificado elTipoDeCertificado)
         {
-            if (EsDeAutenticacion(elTipoDeCertificado))
-                return DetermineElTipoDeIdentificacionDeAutenticacion(elTipoDeIdentificacion);
+            if (ElPropositoEsDeAutenticacion(elTipoDeCertificado))
+                return ObtengaLaInformacionDeAutenticacion(elTipoDeIdentificacion);
             else
-                return DetermineElTipoDeIdentificacionDeFirma(elTipoDeIdentificacion);
+                return ObtengaLaInformacionDeFirma(elTipoDeIdentificacion);
         }
 
-        private static bool EsDeAutenticacion(TipoDeCertificado elTipoDeCertificado)
+        private static bool ElPropositoEsDeAutenticacion(TipoDeCertificado elTipoDeCertificado)
         {
             return elTipoDeCertificado == TipoDeCertificado.Autenticacion;
         }
 
-        private static InformacionFormateada DetermineElTipoDeIdentificacionDeFirma(TipoDeIdentificacion elTipoDeIdentificacion)
+        private static InformacionFormateada ObtengaLaInformacionDeFirma(TipoDeIdentificacion elTipoDeIdentificacion)
         {
             if (EsNacional(elTipoDeIdentificacion))
                 return new InformacionNacionalDeFirma();
@@ -63,7 +74,7 @@ namespace Certificados.Negocio.GenerarCertificados.ConFunciones
             return elTipoDeIdentificacion == TipoDeIdentificacion.Cedula;
         }
 
-        private static InformacionFormateada DetermineElTipoDeIdentificacionDeAutenticacion(TipoDeIdentificacion elTipoDeIdentificacion)
+        private static InformacionFormateada ObtengaLaInformacionDeAutenticacion(TipoDeIdentificacion elTipoDeIdentificacion)
         {
             if (EsNacional(elTipoDeIdentificacion))
                 return new InformacionNacionalDeAutenticacion();
@@ -71,7 +82,7 @@ namespace Certificados.Negocio.GenerarCertificados.ConFunciones
                 return new InformacionExtranjeraDeAutenticacion();
         }
 
-        private static string GenereElSujeto(InformacionFormateada laInformacion)
+        private static string GenereElSujetoFormateado(InformacionFormateada laInformacion)
         {
             return new SujetoFormateado(laInformacion).ComoTexto();
         }

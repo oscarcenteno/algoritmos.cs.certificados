@@ -1,7 +1,5 @@
 ﻿using Certificados.DS.MapeosABaseDeDatos;
-using Certificados.Negocio.GenerarCertificados;
 using Certificados.Negocio.GenerarCertificados.ConPolimorfismo;
-using Sujetos;
 using System;
 
 namespace Certificados.DS.GenerarEmision.ComoUnProcedimiento
@@ -24,38 +22,38 @@ namespace Certificados.DS.GenerarEmision.ComoUnProcedimiento
             laEmision.FechaDeGeneracion = laFechaActual;
 
             // 2. Genere el certificado de autenticacion
-            InformacionFormateada laInformacionDeAutenticacion;
+            DatosParaUnCertificadoDigital losDatosDeAutenticacion;
             if (elTipoDeIdentificacion == TipoDeIdentificacion.Cedula)
-                laInformacionDeAutenticacion = new InformacionNacionalDeAutenticacion();
+                losDatosDeAutenticacion = new DatosParaUnCertificadoDigitalNacionalDeAutenticacion();
             else
-                laInformacionDeAutenticacion = new InformacionExtranjeraDeAutenticacion();
+                losDatosDeAutenticacion = new DatosParaUnCertificadoDigitalExtranjeroDeAutenticacion();
 
-            laInformacionDeAutenticacion.Nombre = elNombre;
-            laInformacionDeAutenticacion.Identificacion = laIdentificacion;
-            laInformacionDeAutenticacion.PrimerApellido = elPrimerApellido;
-            laInformacionDeAutenticacion.SegundoApellido = elSegundoApellido;
-            laInformacionDeAutenticacion.FechaActual = laFechaActual;
-            laInformacionDeAutenticacion.DireccionDeRevocacion = laDireccionDeRevocacion;
-            laInformacionDeAutenticacion.AñosDeVigencia = losAñosDeVigencia;
+            losDatosDeAutenticacion.Nombre = elNombre;
+            losDatosDeAutenticacion.Identificacion = laIdentificacion;
+            losDatosDeAutenticacion.PrimerApellido = elPrimerApellido;
+            losDatosDeAutenticacion.SegundoApellido = elSegundoApellido;
+            losDatosDeAutenticacion.FechaActual = laFechaActual;
+            losDatosDeAutenticacion.DireccionDeRevocacion = laDireccionDeRevocacion;
+            losDatosDeAutenticacion.AñosDeVigencia = losAñosDeVigencia;
 
-            laEmision.CertificadoDeAutenticacion = new CertificadoDigital(laInformacionDeAutenticacion);
+            laEmision.CertificadoDeAutenticacion = new CertificadoDigital(losDatosDeAutenticacion);
 
             // 3. Genere el certificado de firma
-            InformacionFormateada laInformacionDeFirma;
+            DatosParaUnCertificadoDigital losDatosDeFirma;
             if (elTipoDeIdentificacion == TipoDeIdentificacion.Cedula)
-                laInformacionDeFirma = new InformacionNacionalDeFirma();
+                losDatosDeFirma = new DatosParaUnCertificadoDigitalNacionalDeFirma();
             else
-                laInformacionDeFirma = new InformacionExtranjeraDeFirma();
+                losDatosDeFirma = new DatosParaUnCertificadoDigitalExtranjeroDeFirma();
 
-            laInformacionDeFirma.Nombre = elNombre;
-            laInformacionDeFirma.Identificacion = laIdentificacion;
-            laInformacionDeFirma.PrimerApellido = elPrimerApellido;
-            laInformacionDeFirma.SegundoApellido = elSegundoApellido;
-            laInformacionDeFirma.FechaActual = laFechaActual;
-            laInformacionDeFirma.DireccionDeRevocacion = laDireccionDeRevocacion;
-            laInformacionDeFirma.AñosDeVigencia = losAñosDeVigencia;
+            losDatosDeFirma.Nombre = elNombre;
+            losDatosDeFirma.Identificacion = laIdentificacion;
+            losDatosDeFirma.PrimerApellido = elPrimerApellido;
+            losDatosDeFirma.SegundoApellido = elSegundoApellido;
+            losDatosDeFirma.FechaActual = laFechaActual;
+            losDatosDeFirma.DireccionDeRevocacion = laDireccionDeRevocacion;
+            losDatosDeFirma.AñosDeVigencia = losAñosDeVigencia;
 
-            laEmision.CertificadoDeFirma = new CertificadoDigital(laInformacionDeFirma);
+            laEmision.CertificadoDeFirma = new CertificadoDigital(losDatosDeFirma);
 
             return laEmision;
         }

@@ -1,5 +1,5 @@
 ﻿using System;
-using Sujetos;
+using Certificados.Negocio.GenerarCertificados.ConPolimorfismo;
 
 namespace Certificados.Negocio.GenerarEmision.ConInversionDeDependencias
 {
@@ -10,8 +10,8 @@ namespace Certificados.Negocio.GenerarEmision.ConInversionDeDependencias
         public string PrimerApellido { get; set; }
         public string SegundoApellido { get; set; }
 
-        public abstract InformacionFormateada InformacionDeAutenticacion { get; }
-        public abstract InformacionFormateada InformacionDeFirma { get; }
+        public abstract DatosParaUnCertificadoDigital DatosDeAutenticacion { get; }
+        public abstract DatosParaUnCertificadoDigital DatosDeFirma { get; }
 
         public abstract int AñosDeVigencia { get; }
         public abstract string DireccionDeRevocacion { get; }

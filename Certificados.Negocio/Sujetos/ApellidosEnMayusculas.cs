@@ -6,7 +6,7 @@ namespace Sujetos
     {
         private string losApellidos;
 
-        public ApellidosEnMayusculas(DatosDeUnCertificadoDigital laInformacion)
+        public ApellidosEnMayusculas(InformacionFormateada laInformacion)
         {
             losApellidos = laInformacion.ApellidosUnidos;
         }

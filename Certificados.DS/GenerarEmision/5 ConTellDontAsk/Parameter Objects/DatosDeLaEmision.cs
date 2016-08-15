@@ -1,6 +1,6 @@
 ﻿using System;
-using Sujetos;
 using Certificados.DS.MapeosABaseDeDatos;
+using Certificados.Negocio.GenerarCertificados.ConPolimorfismo;
 
 namespace Certificados.DS.GenerarEmision.ConTellDontAsk
 {
@@ -12,14 +12,14 @@ namespace Certificados.DS.GenerarEmision.ConTellDontAsk
         public string PrimerApellido { get; set; }
         public string SegundoApellido { get; set; }
 
-        public InformacionFormateada InformacionDeAutenticacion
+        public DatosParaUnCertificadoDigital InformacionDeAutenticacion
         {
             get
             {
                 if (EsNacional())
-                    return new InformacionNacionalDeAutenticacion();
+                    return new DatosParaUnCertificadoDigitalNacionalDeAutenticacion();
                 else
-                    return new InformacionExtranjeraDeAutenticacion();
+                    return new DatosParaUnCertificadoDigitalExtranjeroDeAutenticacion();
             }
         }
 
@@ -28,14 +28,14 @@ namespace Certificados.DS.GenerarEmision.ConTellDontAsk
             return TipoDeIdentificacion == TipoDeIdentificacion.Cedula;
         }
 
-        public InformacionFormateada InformacionDeFirma
+        public DatosParaUnCertificadoDigital InformacionDeFirma
         {
             get
             {
                 if (EsNacional())
-                    return new InformacionNacionalDeFirma();
+                    return new DatosParaUnCertificadoDigitalNacionalDeFirma();
                 else
-                    return new InformacionExtranjeraDeFirma();
+                    return new DatosParaUnCertificadoDigitalExtranjeroDeFirma();
             }
         }
 

@@ -1,20 +1,19 @@
 ﻿using Certificados.Negocio.GenerarCertificados.ConPolimorfismo;
-using Sujetos;
 
 namespace Certificados.Negocio.GenerarEmision.ConInversionDeDependencias
 {
     public class CertificadoDeAutenticacion
     {
-        InformacionFormateada laInformacionDeAutenticacion;
+        DatosParaUnCertificadoDigital losDatos;
 
         public CertificadoDeAutenticacion(DatosDeLaEmision losDatosDeLaEmision)
         {
-            laInformacionDeAutenticacion = losDatosDeLaEmision.InformacionDeAutenticacion;
+            losDatos = losDatosDeLaEmision.DatosDeAutenticacion;
         }
 
         public CertificadoDigital Generado()
         {
-            return new CertificadoDigital(laInformacionDeAutenticacion);
+            return new CertificadoDigital(losDatos);
         }
     }
 }

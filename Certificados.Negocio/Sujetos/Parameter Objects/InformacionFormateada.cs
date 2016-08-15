@@ -1,8 +1,6 @@
-﻿using Certificados.Negocio.GenerarCertificados.ConPolimorfismo;
-
-namespace Sujetos
+﻿namespace Sujetos
 {
-    public abstract class InformacionFormateada : DatosDeUnCertificadoDigital
+    public abstract class InformacionFormateada : InformacionDelSolicitante
     {
         public string ApellidosFormateados
         {

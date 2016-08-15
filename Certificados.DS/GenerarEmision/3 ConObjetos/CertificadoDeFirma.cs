@@ -1,32 +1,31 @@
-﻿using Sujetos;
-using System;
+﻿using System;
 using Certificados.Negocio.GenerarCertificados.ConPolimorfismo;
 
 namespace Certificados.DS.GenerarEmision.ConObjetos
 {
     public class CertificadoDeFirma
     {
-        private InformacionFormateada laInformacionDeFirma;
+        private DatosParaUnCertificadoDigital losDatos;
 
         public CertificadoDeFirma(TipoDeIdentificacion elTipoDeIdentificacion, string laIdentificacion, string elNombre, string elPrimerApellido, string elSegundoApellido, string laDireccionDeRevocacion, int losAñosDeVigencia, DateTime laFechaActual)
         {
-            laInformacionDeFirma = DetermineInformacionDeFirma(elTipoDeIdentificacion);
+            losDatos = DetermineInformacionDeFirma(elTipoDeIdentificacion);
 
-            laInformacionDeFirma.Nombre = elNombre;
-            laInformacionDeFirma.Identificacion = laIdentificacion;
-            laInformacionDeFirma.PrimerApellido = elPrimerApellido;
-            laInformacionDeFirma.SegundoApellido = elSegundoApellido;
-            laInformacionDeFirma.FechaActual = laFechaActual;
-            laInformacionDeFirma.DireccionDeRevocacion = laDireccionDeRevocacion;
-            laInformacionDeFirma.AñosDeVigencia = losAñosDeVigencia;
+            losDatos.Nombre = elNombre;
+            losDatos.Identificacion = laIdentificacion;
+            losDatos.PrimerApellido = elPrimerApellido;
+            losDatos.SegundoApellido = elSegundoApellido;
+            losDatos.FechaActual = laFechaActual;
+            losDatos.DireccionDeRevocacion = laDireccionDeRevocacion;
+            losDatos.AñosDeVigencia = losAñosDeVigencia;
         }
 
-        private static InformacionFormateada DetermineInformacionDeFirma(TipoDeIdentificacion elTipoDeIdentificacion)
+        private static DatosParaUnCertificadoDigital DetermineInformacionDeFirma(TipoDeIdentificacion elTipoDeIdentificacion)
         {
             if (EsNacional(elTipoDeIdentificacion))
-                return new InformacionNacionalDeFirma();
+                return new DatosParaUnCertificadoDigitalNacionalDeFirma();
             else
-                return new InformacionExtranjeraDeFirma();
+                return new DatosParaUnCertificadoDigitalExtranjeroDeFirma();
         }
 
         private static bool EsNacional(TipoDeIdentificacion elTipoDeIdentificacion)
@@ -36,7 +35,7 @@ namespace Certificados.DS.GenerarEmision.ConObjetos
 
         public CertificadoDigital Generado()
         {
-            return new CertificadoDigital(laInformacionDeFirma);
+            return new CertificadoDigital(losDatos);
         }
     }
 }

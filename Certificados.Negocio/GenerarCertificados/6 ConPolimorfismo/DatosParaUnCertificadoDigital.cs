@@ -1,8 +1,9 @@
-﻿using System;
+﻿using Sujetos;
+using System;
 
 namespace Certificados.Negocio.GenerarCertificados.ConPolimorfismo
 {
-    public class DatosDeUnCertificadoDigital
+    public abstract class DatosParaUnCertificadoDigital
     {
         public string Nombre { get; set; }
         public string PrimerApellido { get; set; }
@@ -12,23 +13,6 @@ namespace Certificados.Negocio.GenerarCertificados.ConPolimorfismo
         public int AñosDeVigencia { get; set; }
         public DateTime FechaActual { get; set; }
 
-        public string NombreEnMayuscula
-        {
-            get
-            {
-                return Nombre.ToUpper();
-            }
-        }
-
-        public string ApellidosUnidos
-        {
-            get
-            {
-                return $"{PrimerApellido} {SegundoApellido}";
-            }
-        }
-
-
         public DateTime FechaDeVencimiento
         {
             get
@@ -36,5 +20,7 @@ namespace Certificados.Negocio.GenerarCertificados.ConPolimorfismo
                 return FechaActual.AddYears(AñosDeVigencia);
             }
         }
+
+        public abstract InformacionFormateada InformacionFormateada { get; }
     }
 }

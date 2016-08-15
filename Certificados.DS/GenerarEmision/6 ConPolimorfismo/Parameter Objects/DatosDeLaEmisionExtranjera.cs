@@ -1,23 +1,25 @@
-﻿using Sujetos;
+﻿using Certificados.Negocio.GenerarCertificados.ConPolimorfismo;
 using Mapeable;
 
 namespace Certificados.DS.GenerarEmision.ConPolimorfismo
 {
     public class DatosDeLaEmisionExtranjera : DatosDeLaEmision
     {
-        public override InformacionFormateada InformacionDeAutenticacion
+        public override DatosParaUnCertificadoDigital DatosDeAutenticacion
         {
             get
             {
-                return new Mapeo<DatosDeLaEmision, InformacionExtranjeraDeAutenticacion>().Mapee(this);
+                return new Mapeo<DatosDeLaEmision, 
+                    DatosParaUnCertificadoDigitalExtranjeroDeAutenticacion>().Mapee(this);
             }
         }
 
-        public override InformacionFormateada InformacionDeFirma
+        public override DatosParaUnCertificadoDigital DatosDeFirma
         {
             get
             {
-                return new Mapeo<DatosDeLaEmision, InformacionExtranjeraDeFirma>().Mapee(this);
+                return new Mapeo<DatosDeLaEmision, 
+                    DatosParaUnCertificadoDigitalExtranjeroDeFirma>().Mapee(this);
             }
         }
     }

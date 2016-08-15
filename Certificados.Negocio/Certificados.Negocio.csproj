@@ -52,12 +52,36 @@
     <Compile Include="GenerarCertificados\2 ConFunciones\GeneracionDeCertificadosDigitales.cs" />
     <Compile Include="GenerarCertificados\2 ConFunciones\TipoDeCertificado.cs" />
     <Compile Include="GenerarCertificados\2 ConFunciones\TipoDeIdentificacion.cs" />
+    <Compile Include="GenerarCertificados\3 ConObjetos\CertificadoDigital.cs" />
+    <Compile Include="GenerarCertificados\3 ConObjetos\GeneracionDeCertificadosDigitales.cs" />
+    <Compile Include="GenerarCertificados\3 ConObjetos\Sujeto.cs" />
+    <Compile Include="GenerarCertificados\3 ConObjetos\TipoDeCertificado.cs" />
+    <Compile Include="GenerarCertificados\3 ConObjetos\TipoDeIdentificacion.cs" />
+    <Compile Include="GenerarCertificados\4 ConParameterObject\CertificadoDigital.cs" />
+    <Compile Include="GenerarCertificados\4 ConParameterObject\DatosParaUnCertificadoDigital.cs" />
+    <Compile Include="GenerarCertificados\4 ConParameterObject\GeneracionDeCertificadosDigitales.cs" />
+    <Compile Include="GenerarCertificados\4 ConParameterObject\Sujeto.cs" />
+    <Compile Include="GenerarCertificados\4 ConParameterObject\TipoDeCertificado.cs" />
+    <Compile Include="GenerarCertificados\4 ConParameterObject\TipoDeIdentificacion.cs" />
+    <Compile Include="GenerarCertificados\5 Con TellDontAsk\CertificadoDigital.cs" />
+    <Compile Include="GenerarCertificados\5 Con TellDontAsk\DatosParaUnCertificadoDigital.cs" />
+    <Compile Include="GenerarCertificados\5 Con TellDontAsk\GeneracionDeCertificadosDigitales.cs" />
+    <Compile Include="GenerarCertificados\5 Con TellDontAsk\Sujeto.cs" />
+    <Compile Include="GenerarCertificados\5 Con TellDontAsk\TipoDeCertificado.cs" />
+    <Compile Include="GenerarCertificados\5 Con TellDontAsk\TipoDeIdentificacion.cs" />
     <Compile Include="GenerarCertificados\6 ConPolimorfismo\CertificadoDigital.cs" />
-    <Compile Include="GenerarCertificados\6 ConPolimorfismo\DatosDeUnCertificadoDigital.cs" />
+    <Compile Include="GenerarCertificados\6 ConPolimorfismo\DatosParaUnCertificadoDigital.cs" />
+    <Compile Include="GenerarCertificados\6 ConPolimorfismo\DatosParaUnCertificadoDigitalExtranjeroDeAutenticacion.cs" />
+    <Compile Include="GenerarCertificados\6 ConPolimorfismo\DatosParaUnCertificadoDigitalExtranjeroDeFirma.cs" />
+    <Compile Include="GenerarCertificados\6 ConPolimorfismo\DatosParaUnCertificadoDigitalNacionalDeAutenticacion.cs" />
+    <Compile Include="GenerarCertificados\6 ConPolimorfismo\DatosParaUnCertificadoDigitalNacionalDeFirma.cs" />
+    <Compile Include="GenerarCertificados\6 ConPolimorfismo\GeneracionDeCertificadosDigitales.cs" />
+    <Compile Include="GenerarCertificados\6 ConPolimorfismo\Sujeto.cs" />
     <Compile Include="Sujetos\ApellidosEnMayusculas.cs" />
     <Compile Include="Sujetos\ApellidosFormateados.cs" />
     <Compile Include="Sujetos\CN.cs" />
     <Compile Include="Sujetos\GeneracionDeSujetos.cs" />
+    <Compile Include="Sujetos\Parameter Objects\InformacionDelSolicitante.cs" />
     <Compile Include="Sujetos\Parameter Objects\InformacionExtranjera.cs" />
     <Compile Include="Sujetos\Parameter Objects\InformacionExtranjeraDeAutenticacion.cs" />
     <Compile Include="Sujetos\Parameter Objects\InformacionExtranjeraDeFirma.cs" />
@@ -76,14 +100,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="GenerarCertificados\6 ConPolimorfismo\Herencia de parameter objects.cd" />
-    <None Include="GenerarEmision\7 ConInversionDeDependencias\Parameter Objects\Parameter Objects.cd" />
+    <None Include="GenerarEmision\7 ConInversionDeDependencias\Parameter Objects\Herencia de parameter objects.cd" />
     <None Include="packages.config" />
+    <None Include="Sujetos\Parameter Objects\Herencia de parameter objects.cd" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="GenerarCertificados\3 ConObjetos\" />
-    <Folder Include="GenerarCertificados\4 ConParameterObject\" />
-    <Folder Include="GenerarCertificados\5 Con TellDontAsk\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

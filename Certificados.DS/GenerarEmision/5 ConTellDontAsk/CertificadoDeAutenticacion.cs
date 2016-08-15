@@ -1,29 +1,27 @@
-﻿using Certificados.Negocio.GenerarCertificados;
-using Certificados.Negocio.GenerarCertificados.ConPolimorfismo;
-using Sujetos;
+﻿using Certificados.Negocio.GenerarCertificados.ConPolimorfismo;
 
 namespace Certificados.DS.GenerarEmision.ConTellDontAsk
 {
     public class CertificadoDeAutenticacion
     {
-        InformacionFormateada laInformacionDeAutenticacion;
+        DatosParaUnCertificadoDigital losDatos;
 
         public CertificadoDeAutenticacion(DatosDeLaEmision losDatosDeLaEmision)
         {
-            laInformacionDeAutenticacion = losDatosDeLaEmision.InformacionDeAutenticacion;
+            losDatos = losDatosDeLaEmision.InformacionDeAutenticacion;
 
-            laInformacionDeAutenticacion.Nombre = losDatosDeLaEmision.Nombre;
-            laInformacionDeAutenticacion.Identificacion = losDatosDeLaEmision.Identificacion;
-            laInformacionDeAutenticacion.PrimerApellido = losDatosDeLaEmision.PrimerApellido;
-            laInformacionDeAutenticacion.SegundoApellido = losDatosDeLaEmision.SegundoApellido;
-            laInformacionDeAutenticacion.FechaActual = losDatosDeLaEmision.FechaActual;
-            laInformacionDeAutenticacion.DireccionDeRevocacion = losDatosDeLaEmision.DireccionDeRevocacion;
-            laInformacionDeAutenticacion.AñosDeVigencia = losDatosDeLaEmision.AñosDeVigencia;
+            losDatos.Nombre = losDatosDeLaEmision.Nombre;
+            losDatos.Identificacion = losDatosDeLaEmision.Identificacion;
+            losDatos.PrimerApellido = losDatosDeLaEmision.PrimerApellido;
+            losDatos.SegundoApellido = losDatosDeLaEmision.SegundoApellido;
+            losDatos.FechaActual = losDatosDeLaEmision.FechaActual;
+            losDatos.DireccionDeRevocacion = losDatosDeLaEmision.DireccionDeRevocacion;
+            losDatos.AñosDeVigencia = losDatosDeLaEmision.AñosDeVigencia;
         }
 
         public CertificadoDigital Generado()
         {
-            return new CertificadoDigital(laInformacionDeAutenticacion);
+            return new CertificadoDigital(losDatos);
         }
     }
 }

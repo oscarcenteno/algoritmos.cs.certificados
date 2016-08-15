@@ -1,6 +1,5 @@
 ﻿using Certificados.DS.MapeosABaseDeDatos;
 using Certificados.Negocio.GenerarCertificados.ConPolimorfismo;
-using Sujetos;
 using System;
 
 namespace Certificados.DS.GenerarEmision.ConFunciones
@@ -48,65 +47,65 @@ namespace Certificados.DS.GenerarEmision.ConFunciones
 
         private static CertificadoDigital ObtengaElCertificadoDeAutenticacion(TipoDeIdentificacion elTipoDeIdentificacion, string laIdentificacion, string elNombre, string elPrimerApellido, string elSegundoApellido, string laDireccionDeRevocacion, int losAñosDeVigencia, DateTime laFechaActual)
         {
-            InformacionFormateada laInformacionDeAutenticacion;
-            laInformacionDeAutenticacion = GenereLaInformacionDeAutenticacion(elTipoDeIdentificacion, laIdentificacion, elNombre, elPrimerApellido, elSegundoApellido, laDireccionDeRevocacion, losAñosDeVigencia, laFechaActual);
+            DatosParaUnCertificadoDigital losDatos;
+            losDatos = GenereLaInformacionDeAutenticacion(elTipoDeIdentificacion, laIdentificacion, elNombre, elPrimerApellido, elSegundoApellido, laDireccionDeRevocacion, losAñosDeVigencia, laFechaActual);
 
-            return new CertificadoDigital(laInformacionDeAutenticacion);
+            return new CertificadoDigital(losDatos);
         }
 
-        private static InformacionFormateada GenereLaInformacionDeAutenticacion(TipoDeIdentificacion elTipoDeIdentificacion, string laIdentificacion, string elNombre, string elPrimerApellido, string elSegundoApellido, string laDireccionDeRevocacion, int losAñosDeVigencia, DateTime laFechaActual)
+        private static DatosParaUnCertificadoDigital GenereLaInformacionDeAutenticacion(TipoDeIdentificacion elTipoDeIdentificacion, string laIdentificacion, string elNombre, string elPrimerApellido, string elSegundoApellido, string laDireccionDeRevocacion, int losAñosDeVigencia, DateTime laFechaActual)
         {
-            InformacionFormateada laInformacionDeAutenticacion;
-            laInformacionDeAutenticacion = DetermineInformacionDeAutenticacion(elTipoDeIdentificacion);
+            DatosParaUnCertificadoDigital losDatos;
+            losDatos = DetermineInformacionDeAutenticacion(elTipoDeIdentificacion);
 
-            laInformacionDeAutenticacion.Nombre = elNombre;
-            laInformacionDeAutenticacion.Identificacion = laIdentificacion;
-            laInformacionDeAutenticacion.PrimerApellido = elPrimerApellido;
-            laInformacionDeAutenticacion.SegundoApellido = elSegundoApellido;
-            laInformacionDeAutenticacion.FechaActual = laFechaActual;
-            laInformacionDeAutenticacion.DireccionDeRevocacion = laDireccionDeRevocacion;
-            laInformacionDeAutenticacion.AñosDeVigencia = losAñosDeVigencia;
+            losDatos.Nombre = elNombre;
+            losDatos.Identificacion = laIdentificacion;
+            losDatos.PrimerApellido = elPrimerApellido;
+            losDatos.SegundoApellido = elSegundoApellido;
+            losDatos.FechaActual = laFechaActual;
+            losDatos.DireccionDeRevocacion = laDireccionDeRevocacion;
+            losDatos.AñosDeVigencia = losAñosDeVigencia;
 
-            return laInformacionDeAutenticacion;
+            return losDatos;
         }
 
-        private static InformacionFormateada DetermineInformacionDeAutenticacion(TipoDeIdentificacion elTipoDeIdentificacion)
+        private static DatosParaUnCertificadoDigital DetermineInformacionDeAutenticacion(TipoDeIdentificacion elTipoDeIdentificacion)
         {
             if (EsNacional(elTipoDeIdentificacion))
-                return new InformacionNacionalDeAutenticacion();
+                return new DatosParaUnCertificadoDigitalNacionalDeAutenticacion();
             else
-                return new InformacionExtranjeraDeAutenticacion();
+                return new DatosParaUnCertificadoDigitalExtranjeroDeAutenticacion();
         }
 
         private static CertificadoDigital ObtengaElCertificadoDeFirma(TipoDeIdentificacion elTipoDeIdentificacion, string laIdentificacion, string elNombre, string elPrimerApellido, string elSegundoApellido, string laDireccionDeRevocacion, int losAñosDeVigencia, DateTime laFechaActual)
         {
-            InformacionFormateada laInformacionDeFirma = GenereLaInformacionDeFirma(elTipoDeIdentificacion, laIdentificacion, elNombre, elPrimerApellido, elSegundoApellido, laDireccionDeRevocacion, losAñosDeVigencia, laFechaActual);
+            DatosParaUnCertificadoDigital laInformacionDeFirma = GenereLaInformacionDeFirma(elTipoDeIdentificacion, laIdentificacion, elNombre, elPrimerApellido, elSegundoApellido, laDireccionDeRevocacion, losAñosDeVigencia, laFechaActual);
 
             return new CertificadoDigital(laInformacionDeFirma);
         }
 
-        private static InformacionFormateada GenereLaInformacionDeFirma(TipoDeIdentificacion elTipoDeIdentificacion, string laIdentificacion, string elNombre, string elPrimerApellido, string elSegundoApellido, string laDireccionDeRevocacion, int losAñosDeVigencia, DateTime laFechaActual)
+        private static DatosParaUnCertificadoDigital GenereLaInformacionDeFirma(TipoDeIdentificacion elTipoDeIdentificacion, string laIdentificacion, string elNombre, string elPrimerApellido, string elSegundoApellido, string laDireccionDeRevocacion, int losAñosDeVigencia, DateTime laFechaActual)
         {
-            InformacionFormateada laInformacionDeFirma;
-            laInformacionDeFirma = DetermineInformacionDeFirma(elTipoDeIdentificacion);
+            DatosParaUnCertificadoDigital losDatos;
+            losDatos = DetermineInformacionDeFirma(elTipoDeIdentificacion);
 
-            laInformacionDeFirma.Nombre = elNombre;
-            laInformacionDeFirma.Identificacion = laIdentificacion;
-            laInformacionDeFirma.PrimerApellido = elPrimerApellido;
-            laInformacionDeFirma.SegundoApellido = elSegundoApellido;
-            laInformacionDeFirma.FechaActual = laFechaActual;
-            laInformacionDeFirma.DireccionDeRevocacion = laDireccionDeRevocacion;
-            laInformacionDeFirma.AñosDeVigencia = losAñosDeVigencia;
+            losDatos.Nombre = elNombre;
+            losDatos.Identificacion = laIdentificacion;
+            losDatos.PrimerApellido = elPrimerApellido;
+            losDatos.SegundoApellido = elSegundoApellido;
+            losDatos.FechaActual = laFechaActual;
+            losDatos.DireccionDeRevocacion = laDireccionDeRevocacion;
+            losDatos.AñosDeVigencia = losAñosDeVigencia;
 
-            return laInformacionDeFirma;
+            return losDatos;
         }
 
-        private static InformacionFormateada DetermineInformacionDeFirma(TipoDeIdentificacion elTipoDeIdentificacion)
+        private static DatosParaUnCertificadoDigital DetermineInformacionDeFirma(TipoDeIdentificacion elTipoDeIdentificacion)
         {
             if (EsNacional(elTipoDeIdentificacion))
-                return new InformacionNacionalDeFirma();
+                return new DatosParaUnCertificadoDigitalNacionalDeFirma();
             else
-                return new InformacionExtranjeraDeFirma();
+                return new DatosParaUnCertificadoDigitalExtranjeroDeFirma();
         }
 
         private static bool EsNacional(TipoDeIdentificacion elTipoDeIdentificacion)

@@ -1,20 +1,19 @@
-﻿using Sujetos;
-using Certificados.Negocio.GenerarCertificados.ConPolimorfismo;
+﻿using Certificados.Negocio.GenerarCertificados.ConPolimorfismo;
 
 namespace Certificados.DS.GenerarEmision.ConPolimorfismo
 {
     public class CertificadoDeFirma
     {
-        private InformacionFormateada laInformacionDeFirma;
+        private DatosParaUnCertificadoDigital losDatos;
 
         public CertificadoDeFirma(DatosDeLaEmision losDatosDeLaEmision)
         {
-            laInformacionDeFirma = losDatosDeLaEmision.InformacionDeFirma;
+            losDatos = losDatosDeLaEmision.DatosDeFirma;
         }
 
         public CertificadoDigital Generado()
         {
-            return new CertificadoDigital(laInformacionDeFirma);
+            return new CertificadoDigital(losDatos);
         }
     }
 }

@@ -60,6 +60,16 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="GenerarCertificados\3 ConObjetos\EscenariosDeCertificados.cs" />
+    <Compile Include="GenerarCertificados\3 ConObjetos\GeneracionDeCertificadosDigitales\DireccionDeRevocacion_Tests.cs" />
+    <Compile Include="GenerarCertificados\3 ConObjetos\GeneracionDeCertificadosDigitales\FechaDeVencimiento_Tests.cs" />
+    <Compile Include="GenerarCertificados\3 ConObjetos\GeneracionDeCertificadosDigitales\FechaEmision_Tests.cs" />
+    <Compile Include="GenerarCertificados\3 ConObjetos\GeneracionDeCertificadosDigitales\Sujeto_Tests.cs" />
+    <Compile Include="GenerarCertificados\2 ConFunciones\EscenariosDeCertificados.cs" />
+    <Compile Include="GenerarCertificados\2 ConFunciones\GeneracionDeCertificadosDigitales\DireccionDeRevocacion_Tests.cs" />
+    <Compile Include="GenerarCertificados\2 ConFunciones\GeneracionDeCertificadosDigitales\FechaDeVencimiento_Tests.cs" />
+    <Compile Include="GenerarCertificados\2 ConFunciones\GeneracionDeCertificadosDigitales\FechaEmision_Tests.cs" />
+    <Compile Include="GenerarCertificados\2 ConFunciones\GeneracionDeCertificadosDigitales\Sujeto_Tests.cs" />
     <Compile Include="GenerarCertificados\1 ComoUnProcedimiento\EscenariosDeCertificados.cs" />
     <Compile Include="GenerarCertificados\1 ComoUnProcedimiento\GeneracionDeCertificadosDigitales\DireccionDeRevocacion_Tests.cs" />
     <Compile Include="GenerarCertificados\1 ComoUnProcedimiento\GeneracionDeCertificadosDigitales\FechaDeVencimiento_Tests.cs" />

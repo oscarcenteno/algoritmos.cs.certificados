@@ -1,22 +1,21 @@
 ﻿using System;
-using Sujetos;
 
 namespace Certificados.Negocio.GenerarCertificados.ConPolimorfismo
 {
     public class CertificadoDigital
     {
-        private InformacionFormateada laInformacion;
+        private DatosParaUnCertificadoDigital losDatos;
 
-        public CertificadoDigital(InformacionFormateada laInformacion)
+        public CertificadoDigital(DatosParaUnCertificadoDigital losDatos)
         {
-            this.laInformacion = laInformacion;
+            this.losDatos = losDatos;
         }
 
         public string Sujeto
         {
             get
             {
-                return new SujetoFormateado(laInformacion).ComoTexto();
+                return new Sujeto(losDatos).ComoTexto();
             }
         }
 
@@ -24,7 +23,7 @@ namespace Certificados.Negocio.GenerarCertificados.ConPolimorfismo
         {
             get
             {
-                return laInformacion.FechaActual;
+                return losDatos.FechaActual;
             }
         }
 
@@ -32,7 +31,7 @@ namespace Certificados.Negocio.GenerarCertificados.ConPolimorfismo
         {
             get
             {
-                return laInformacion.FechaDeVencimiento;
+                return losDatos.FechaDeVencimiento;
             }
         }
 
@@ -40,7 +39,7 @@ namespace Certificados.Negocio.GenerarCertificados.ConPolimorfismo
         {
             get
             {
-                return laInformacion.DireccionDeRevocacion;
+                return losDatos.DireccionDeRevocacion;
             }
         }
     }

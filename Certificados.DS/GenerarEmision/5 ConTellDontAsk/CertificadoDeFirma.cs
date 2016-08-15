@@ -1,29 +1,27 @@
-﻿using Sujetos;
-using Certificados.Negocio.GenerarCertificados;
-using Certificados.Negocio.GenerarCertificados.ConPolimorfismo;
+﻿using Certificados.Negocio.GenerarCertificados.ConPolimorfismo;
 
 namespace Certificados.DS.GenerarEmision.ConTellDontAsk
 {
     public class CertificadoDeFirma
     {
-        private InformacionFormateada laInformacionDeFirma;
+        DatosParaUnCertificadoDigital losDatos;
 
         public CertificadoDeFirma(DatosDeLaEmision losDatosDeLaEmision)
         {
-            laInformacionDeFirma = losDatosDeLaEmision.InformacionDeFirma;
+            losDatos = losDatosDeLaEmision.InformacionDeFirma;
 
-            laInformacionDeFirma.Nombre = losDatosDeLaEmision.Nombre;
-            laInformacionDeFirma.Identificacion = losDatosDeLaEmision.Identificacion;
-            laInformacionDeFirma.PrimerApellido = losDatosDeLaEmision.PrimerApellido;
-            laInformacionDeFirma.SegundoApellido = losDatosDeLaEmision.SegundoApellido;
-            laInformacionDeFirma.FechaActual = losDatosDeLaEmision.FechaActual;
-            laInformacionDeFirma.DireccionDeRevocacion = losDatosDeLaEmision.DireccionDeRevocacion;
-            laInformacionDeFirma.AñosDeVigencia = losDatosDeLaEmision.AñosDeVigencia;
+            losDatos.Nombre = losDatosDeLaEmision.Nombre;
+            losDatos.Identificacion = losDatosDeLaEmision.Identificacion;
+            losDatos.PrimerApellido = losDatosDeLaEmision.PrimerApellido;
+            losDatos.SegundoApellido = losDatosDeLaEmision.SegundoApellido;
+            losDatos.FechaActual = losDatosDeLaEmision.FechaActual;
+            losDatos.DireccionDeRevocacion = losDatosDeLaEmision.DireccionDeRevocacion;
+            losDatos.AñosDeVigencia = losDatosDeLaEmision.AñosDeVigencia;
         }
 
         public CertificadoDigital Generado()
         {
-            return new CertificadoDigital(laInformacionDeFirma);
+            return new CertificadoDigital(losDatos);
         }
     }
 }

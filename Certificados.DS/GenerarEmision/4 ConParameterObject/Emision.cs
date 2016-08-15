@@ -1,45 +1,39 @@
-﻿using Certificados.Negocio.GenerarCertificados;
-using Certificados.Negocio.GenerarCertificados.ConPolimorfismo;
+﻿using Certificados.Negocio.GenerarCertificados.ConPolimorfismo;
 using System;
 
 namespace Certificados.DS.GenerarEmision.ConParameterObject
 {
     public class Emision
     {
-        private DateTime laFechaActual;
-        private CertificadoDigital elCertificadoDeAutenticacion;
-        private CertificadoDigital elCertificadoDeFirma;
+        private DatosDeLaEmision losDatosDeLaEmision;
 
         public Emision(DatosDeLaEmision losDatosDeLaEmision)
         {
-            laFechaActual = losDatosDeLaEmision.FechaActual;
-            elCertificadoDeAutenticacion = ObtengaElCertificadoDeAutenticacion(losDatosDeLaEmision);
-            elCertificadoDeFirma = ObtengaElCertificadoDeFirma(losDatosDeLaEmision);
-        }
-
-        private static CertificadoDigital ObtengaElCertificadoDeAutenticacion(DatosDeLaEmision losDatosDeLaEmision)
-        {
-            return new CertificadoDeAutenticacion(losDatosDeLaEmision).Generado();
-        }
-
-        private static CertificadoDigital ObtengaElCertificadoDeFirma(DatosDeLaEmision losDatosDeLaEmision)
-        {
-            return new CertificadoDeFirma(losDatosDeLaEmision).Generado();
+            this.losDatosDeLaEmision = losDatosDeLaEmision;
         }
 
         public DateTime FechaDeGeneracion
         {
-            get { return laFechaActual; }
+            get
+            {
+                return losDatosDeLaEmision.FechaActual;
+            }
         }
 
         public CertificadoDigital CertificadoDeAutenticacion
         {
-            get { return elCertificadoDeAutenticacion; }
+            get
+            {
+                return new CertificadoDeAutenticacion(losDatosDeLaEmision).Generado();
+            }
         }
 
         public CertificadoDigital CertificadoDeFirma
         {
-            get { return elCertificadoDeFirma; }
+            get
+            {
+                return new CertificadoDeFirma(losDatosDeLaEmision).Generado();
+            }
         }
     }
 }

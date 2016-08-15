@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Certificados.Negocio.GenerarEmision.ConInversionDeDependencias.DatosDeLaEmision">
+    <Position X="2" Y="3.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAQAAIAAAoAAAAAAAAgAAAAAAACAAQAQ=</HashCode>
+      <FileName>GenerarEmision\7 ConInversionDeDependencias\Parameter Objects\DatosDeLaEmision.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Certificados.Negocio.GenerarEmision.ConInversionDeDependencias.DatosDeLaEmisionExtranjera">
+    <Position X="3.25" Y="7" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAACAAAAA=</HashCode>
+      <FileName>GenerarEmision\7 ConInversionDeDependencias\Parameter Objects\DatosDeLaEmisionExtranjera.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Certificados.Negocio.GenerarEmision.ConInversionDeDependencias.DatosDeLaEmisionNacional">
+    <Position X="0.5" Y="7" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAACAAAAA=</HashCode>
+      <FileName>GenerarEmision\7 ConInversionDeDependencias\Parameter Objects\DatosDeLaEmisionNacional.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Certificados.Negocio.GenerarCertificados.ConPolimorfismo.DatosParaUnCertificadoDigital" Collapsed="true">
+    <Position X="8.75" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAIAAAoAAAAQAAAgAAAAAAAAAAQQQ=</HashCode>
+      <FileName>GenerarCertificados\6 ConPolimorfismo\DatosParaUnCertificadoDigital.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Certificados.Negocio.GenerarCertificados.ConPolimorfismo.DatosParaUnCertificadoDigitalExtranjeroDeAutenticacion" Collapsed="true">
+    <Position X="6" Y="1.75" Width="4" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GenerarCertificados\6 ConPolimorfismo\DatosParaUnCertificadoDigitalExtranjeroDeAutenticacion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Certificados.Negocio.GenerarCertificados.ConPolimorfismo.DatosParaUnCertificadoDigitalExtranjeroDeFirma" Collapsed="true">
+    <Position X="15" Y="1.75" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GenerarCertificados\6 ConPolimorfismo\DatosParaUnCertificadoDigitalExtranjeroDeFirma.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Certificados.Negocio.GenerarCertificados.ConPolimorfismo.DatosParaUnCertificadoDigitalNacionalDeAutenticacion" Collapsed="true">
+    <Position X="1.25" Y="1.75" Width="4" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GenerarCertificados\6 ConPolimorfismo\DatosParaUnCertificadoDigitalNacionalDeAutenticacion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Certificados.Negocio.GenerarCertificados.ConPolimorfismo.DatosParaUnCertificadoDigitalNacionalDeFirma" Collapsed="true">
+    <Position X="10.75" Y="1.75" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GenerarCertificados\6 ConPolimorfismo\DatosParaUnCertificadoDigitalNacionalDeFirma.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,51 +1,50 @@
 ﻿using Certificados.Negocio.GenerarCertificados.ConPolimorfismo;
-using Sujetos;
 using System;
 
 namespace Certificados.Negocio.UnitTests.GenerarCertificados.ConPolimorfismo
 {
     public class EscenariosDeCertificados
     {
-        InformacionFormateada laInformacion;
+        DatosParaUnCertificadoDigital losDatos;
 
         protected CertificadoDigital ObtengaUnCertificadoNacionalDeAutenticacion()
         {
-            laInformacion = new InformacionNacionalDeAutenticacion();
+            losDatos = new DatosParaUnCertificadoDigitalNacionalDeAutenticacion();
             InicialiceUnaPersona();
-            return new CertificadoDigital(laInformacion);
+            return new CertificadoDigital(losDatos);
         }
 
         private void InicialiceUnaPersona()
         {
-            laInformacion.Nombre = "Miguel";
-            laInformacion.PrimerApellido = "Suarez";
-            laInformacion.SegundoApellido = "Godinez";
-            laInformacion.Identificacion = "3034560333";
-            laInformacion.DireccionDeRevocacion = "http://direccionderevocacion.com";
-            laInformacion.AñosDeVigencia = 4;
-            laInformacion.FechaActual = new DateTime(2016, 10, 11);
+            losDatos.Nombre = "Miguel";
+            losDatos.PrimerApellido = "Suarez";
+            losDatos.SegundoApellido = "Godinez";
+            losDatos.Identificacion = "3034560333";
+            losDatos.DireccionDeRevocacion = "http://direccionderevocacion.com";
+            losDatos.AñosDeVigencia = 4;
+            losDatos.FechaActual = new DateTime(2016, 10, 11);
         }
 
         protected CertificadoDigital ObtengaUnCertificadoNacionalDeFirma()
         {
-            laInformacion = new InformacionNacionalDeFirma();
+            losDatos = new DatosParaUnCertificadoDigitalNacionalDeFirma();
             InicialiceUnaPersona();
-            return new CertificadoDigital(laInformacion);
+            return new CertificadoDigital(losDatos);
         }
 
 
         protected CertificadoDigital ObtengaUnCertificadoExtranjeroDeAutenticacion()
         {
-            laInformacion = new InformacionExtranjeraDeAutenticacion();
+            losDatos = new DatosParaUnCertificadoDigitalExtranjeroDeAutenticacion();
             InicialiceUnaPersona();
-            return new CertificadoDigital(laInformacion);
+            return new CertificadoDigital(losDatos);
         }
 
         protected CertificadoDigital ObtengaUnCertificadoExtranjeroDeFirma()
         {
-            laInformacion = new InformacionExtranjeraDeFirma();
+            losDatos = new DatosParaUnCertificadoDigitalExtranjeroDeFirma();
             InicialiceUnaPersona();
-            return new CertificadoDigital(laInformacion);
+            return new CertificadoDigital(losDatos);
         }
     }
 }

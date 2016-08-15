@@ -1,32 +1,30 @@
-﻿using Sujetos;
-using Certificados.Negocio.GenerarCertificados;
-using Certificados.Negocio.GenerarCertificados.ConPolimorfismo;
+﻿using Certificados.Negocio.GenerarCertificados.ConPolimorfismo;
 
 namespace Certificados.DS.GenerarEmision.ConParameterObject
 {
     public class CertificadoDeFirma
     {
-        private InformacionFormateada laInformacionDeFirma;
+        private DatosParaUnCertificadoDigital losDatos;
 
         public CertificadoDeFirma(DatosDeLaEmision losDatosDeLaEmision)
         {
-            laInformacionDeFirma = DetermineInformacionDeFirma(losDatosDeLaEmision);
-            laInformacionDeFirma.Nombre = losDatosDeLaEmision.Nombre;
-            laInformacionDeFirma.Identificacion = losDatosDeLaEmision.Identificacion;
-            laInformacionDeFirma.PrimerApellido = losDatosDeLaEmision.PrimerApellido;
-            laInformacionDeFirma.SegundoApellido = losDatosDeLaEmision.SegundoApellido;
-            laInformacionDeFirma.FechaActual = losDatosDeLaEmision.FechaActual;
-            laInformacionDeFirma.DireccionDeRevocacion = losDatosDeLaEmision.DireccionDeRevocacion;
-            laInformacionDeFirma.AñosDeVigencia = losDatosDeLaEmision.AñosDeVigencia;
+            losDatos = DetermineInformacionDeFirma(losDatosDeLaEmision);
+            losDatos.Nombre = losDatosDeLaEmision.Nombre;
+            losDatos.Identificacion = losDatosDeLaEmision.Identificacion;
+            losDatos.PrimerApellido = losDatosDeLaEmision.PrimerApellido;
+            losDatos.SegundoApellido = losDatosDeLaEmision.SegundoApellido;
+            losDatos.FechaActual = losDatosDeLaEmision.FechaActual;
+            losDatos.DireccionDeRevocacion = losDatosDeLaEmision.DireccionDeRevocacion;
+            losDatos.AñosDeVigencia = losDatosDeLaEmision.AñosDeVigencia;
         }
 
-        private static InformacionFormateada DetermineInformacionDeFirma(DatosDeLaEmision losDatosDeLaEmision)
+        private static DatosParaUnCertificadoDigital DetermineInformacionDeFirma(DatosDeLaEmision losDatosDeLaEmision)
         {
             // TODO: Codigo que no cumple tell dont ask
             if (EsNacional(losDatosDeLaEmision))
-                return new InformacionNacionalDeFirma();
+                return new DatosParaUnCertificadoDigitalNacionalDeFirma();
             else
-                return new InformacionExtranjeraDeFirma();
+                return new DatosParaUnCertificadoDigitalExtranjeroDeFirma();
         }
 
         private static bool EsNacional(DatosDeLaEmision losDatosDeLaEmision)
@@ -37,7 +35,7 @@ namespace Certificados.DS.GenerarEmision.ConParameterObject
 
         public CertificadoDigital Generado()
         {
-            return new CertificadoDigital(laInformacionDeFirma);
+            return new CertificadoDigital(losDatos);
         }
     }
 }

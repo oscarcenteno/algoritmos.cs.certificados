@@ -1,59 +1,38 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="Sujetos.InformacionExtranjera">
-    <Position X="2.25" Y="7" Width="2.25" />
+  <Class Name="Certificados.Negocio.GenerarCertificados.ConPolimorfismo.DatosParaUnCertificadoDigital">
+    <Position X="8" Y="1.25" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Sujetos\Parameter Objects\InformacionExtranjera.cs</FileName>
+      <HashCode>AAAAgAAAAAAAAAAAIAAAoAAAAQAAAgAAAAAAAAAAQQQ=</HashCode>
+      <FileName>GenerarCertificados\6 ConPolimorfismo\DatosParaUnCertificadoDigital.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Sujetos.InformacionExtranjeraDeAutenticacion">
-    <Position X="3.5" Y="9.25" Width="2.75" />
+  <Class Name="Certificados.Negocio.GenerarCertificados.ConPolimorfismo.DatosParaUnCertificadoDigitalExtranjeroDeAutenticacion">
+    <Position X="5.25" Y="4.75" Width="4" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Sujetos\Parameter Objects\InformacionExtranjeraDeAutenticacion.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GenerarCertificados\6 ConPolimorfismo\DatosParaUnCertificadoDigitalExtranjeroDeAutenticacion.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Sujetos.InformacionExtranjeraDeFirma">
-    <Position X="0.5" Y="9.25" Width="2.25" />
+  <Class Name="Certificados.Negocio.GenerarCertificados.ConPolimorfismo.DatosParaUnCertificadoDigitalExtranjeroDeFirma">
+    <Position X="14.25" Y="4.75" Width="3.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Sujetos\Parameter Objects\InformacionExtranjeraDeFirma.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GenerarCertificados\6 ConPolimorfismo\DatosParaUnCertificadoDigitalExtranjeroDeFirma.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Sujetos.InformacionFormateada">
-    <Position X="5.25" Y="4" Width="2.5" />
+  <Class Name="Certificados.Negocio.GenerarCertificados.ConPolimorfismo.DatosParaUnCertificadoDigitalNacionalDeAutenticacion">
+    <Position X="0.5" Y="4.75" Width="4" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAgEAAAAAAAAEAAAAAAUAAAAAAAAAgAAAAAA=</HashCode>
-      <FileName>Sujetos\Parameter Objects\InformacionFormateada.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GenerarCertificados\6 ConPolimorfismo\DatosParaUnCertificadoDigitalNacionalDeAutenticacion.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Sujetos.InformacionNacional">
-    <Position X="8.75" Y="7" Width="2.25" />
+  <Class Name="Certificados.Negocio.GenerarCertificados.ConPolimorfismo.DatosParaUnCertificadoDigitalNacionalDeFirma">
+    <Position X="10" Y="4.75" Width="3.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Sujetos\Parameter Objects\InformacionNacional.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Sujetos.InformacionNacionalDeAutenticacion">
-    <Position X="7" Y="9.25" Width="2.75" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Sujetos\Parameter Objects\InformacionNacionalDeAutenticacion.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Sujetos.InformacionNacionalDeFirma">
-    <Position X="10.5" Y="9.25" Width="2.25" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Sujetos\Parameter Objects\InformacionNacionalDeFirma.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Certificados.Negocio.GenerarCertificados.ConPolimorfismo.DatosDeUnCertificadoDigital">
-    <Position X="5.5" Y="0.5" Width="2.25" />
-    <TypeIdentifier>
-      <HashCode>ACAAgAAAAAAAAAAAIAAAoAAAAAAAAgAAAAABAAAAQQQ=</HashCode>
-      <FileName>GenerarCertificados\6 ConPolimorfismo\DatosDeUnCertificadoDigital.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GenerarCertificados\6 ConPolimorfismo\DatosParaUnCertificadoDigitalNacionalDeFirma.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

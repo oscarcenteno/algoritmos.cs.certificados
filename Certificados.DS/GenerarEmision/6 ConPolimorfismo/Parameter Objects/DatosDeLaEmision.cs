@@ -1,6 +1,6 @@
 ﻿using System;
-using Sujetos;
 using Certificados.DS.MapeosABaseDeDatos;
+using Certificados.Negocio.GenerarCertificados.ConPolimorfismo;
 
 namespace Certificados.DS.GenerarEmision.ConPolimorfismo
 {
@@ -11,9 +11,9 @@ namespace Certificados.DS.GenerarEmision.ConPolimorfismo
         public string PrimerApellido { get; set; }
         public string SegundoApellido { get; set; }
 
-        public abstract InformacionFormateada InformacionDeAutenticacion { get; }
+        public abstract DatosParaUnCertificadoDigital DatosDeAutenticacion { get; }
 
-        public abstract InformacionFormateada InformacionDeFirma { get; }
+        public abstract DatosParaUnCertificadoDigital DatosDeFirma { get; }
 
         public int AñosDeVigencia
         {

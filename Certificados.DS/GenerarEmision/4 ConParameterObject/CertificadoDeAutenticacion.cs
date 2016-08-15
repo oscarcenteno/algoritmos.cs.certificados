@@ -1,11 +1,10 @@
 ﻿using Certificados.Negocio.GenerarCertificados.ConPolimorfismo;
-using Sujetos;
 
 namespace Certificados.DS.GenerarEmision.ConParameterObject
 {
     public class CertificadoDeAutenticacion
     {
-        InformacionFormateada laInformacionDeAutenticacion;
+        DatosParaUnCertificadoDigital laInformacionDeAutenticacion;
 
         public CertificadoDeAutenticacion(DatosDeLaEmision losDatosDeLaEmision)
         {
@@ -17,16 +16,15 @@ namespace Certificados.DS.GenerarEmision.ConParameterObject
             laInformacionDeAutenticacion.FechaActual = losDatosDeLaEmision.FechaActual;
             laInformacionDeAutenticacion.DireccionDeRevocacion = losDatosDeLaEmision.DireccionDeRevocacion;
             laInformacionDeAutenticacion.AñosDeVigencia = losDatosDeLaEmision.AñosDeVigencia;
-
         }
 
-        private static InformacionFormateada DetermineInformacionDeAutenticacion(DatosDeLaEmision losDatosDeLaEmision)
+        private static DatosParaUnCertificadoDigital DetermineInformacionDeAutenticacion(DatosDeLaEmision losDatosDeLaEmision)
         {
             // TODO: Codigo que no cumple tell dont ask
             if (EsNacional(losDatosDeLaEmision))
-                return new InformacionNacionalDeAutenticacion();
+                return new DatosParaUnCertificadoDigitalNacionalDeAutenticacion();
             else
-                return new InformacionExtranjeraDeAutenticacion();
+                return new DatosParaUnCertificadoDigitalExtranjeroDeAutenticacion();
         }
 
         private static bool EsNacional(DatosDeLaEmision losDatosDeLaEmision)

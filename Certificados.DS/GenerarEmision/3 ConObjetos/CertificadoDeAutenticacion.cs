@@ -1,12 +1,11 @@
 ﻿using System;
-using Sujetos;
 using Certificados.Negocio.GenerarCertificados.ConPolimorfismo;
 
 namespace Certificados.DS.GenerarEmision.ConObjetos
 {
     public class CertificadoDeAutenticacion
     {
-        InformacionFormateada laInformacionDeAutenticacion;
+        DatosParaUnCertificadoDigital laInformacionDeAutenticacion;
 
         public CertificadoDeAutenticacion(TipoDeIdentificacion elTipoDeIdentificacion, string laIdentificacion, string elNombre, string elPrimerApellido, string elSegundoApellido, string laDireccionDeRevocacion, int losAñosDeVigencia, DateTime laFechaActual)
         {
@@ -21,12 +20,12 @@ namespace Certificados.DS.GenerarEmision.ConObjetos
             laInformacionDeAutenticacion.AñosDeVigencia = losAñosDeVigencia;
         }
 
-        private static InformacionFormateada DetermineInformacionDeAutenticacion(TipoDeIdentificacion elTipoDeIdentificacion)
+        private static DatosParaUnCertificadoDigital DetermineInformacionDeAutenticacion(TipoDeIdentificacion elTipoDeIdentificacion)
         {
             if (EsNacional(elTipoDeIdentificacion))
-                return new InformacionNacionalDeAutenticacion();
+                return new DatosParaUnCertificadoDigitalNacionalDeAutenticacion();
             else
-                return new InformacionExtranjeraDeAutenticacion();
+                return new DatosParaUnCertificadoDigitalExtranjeroDeAutenticacion();
         }
 
         private static bool EsNacional(TipoDeIdentificacion elTipoDeIdentificacion)
