@@ -52,9 +52,9 @@ namespace WebApplication1.Controllers
         {
             if (ModelState.IsValid)
             {
-                DatosDeLaEmisionNacionalConDependencias laSolicitud;
-                laSolicitud = losDatos.ComoObjeto();
-                new ProcesoDeEmision(laSolicitud).Ejecute();
+                DatosDeLaEmisionNacionalConDependencias losDatosConDependencias;
+                losDatosConDependencias = losDatos.ComoObjeto();
+                ProcesoDeEmision.Ejecute(losDatosConDependencias);
 
                 return RedirectToAction("Index");
             }
@@ -75,9 +75,9 @@ namespace WebApplication1.Controllers
         {
             if (ModelState.IsValid)
             {
-                DatosDeLaEmisionExtranjeraConDependencias laSolicitud;
-                laSolicitud = losDatos.ComoObjeto();
-                new ProcesoDeEmision(laSolicitud).Ejecute();
+                DatosDeLaEmisionExtranjeraConDependencias losDatosConDependencias;
+                losDatosConDependencias = losDatos.ComoObjeto();
+                ProcesoDeEmision.Ejecute(losDatosConDependencias);
 
                 return RedirectToAction("Index");
             }

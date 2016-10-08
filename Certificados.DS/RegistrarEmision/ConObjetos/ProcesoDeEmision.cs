@@ -3,17 +3,12 @@ using Certificados.Negocio.GenerarEmision.ConInversionDeDependencias;
 
 namespace Certificados.BS.RegistrarEmision.ConObjetos
 {
-    public class ProcesoDeEmision
+    public static class ProcesoDeEmision
     {
-        private RegistroDeEmision elRegistro;
-
-        public ProcesoDeEmision(DatosDeLaEmision losDatos)
+        public static void Ejecute(DatosDeLaEmision losDatos)
         {
+            RegistroDeEmision elRegistro;
             elRegistro = new MapeoDelRegistroDeEmision(losDatos).ComoRegistro();
-        }
-
-        public void Ejecute()
-        {
             new RepositorioDeEmisiones().Guarde(elRegistro);
         }
     }

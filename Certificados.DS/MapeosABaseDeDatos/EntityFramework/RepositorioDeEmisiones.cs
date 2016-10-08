@@ -11,17 +11,27 @@ namespace Certificados.DS.MapeosABaseDeDatos
             EmisionDBContext elContexto = new EmisionDBContext();
             DbSet<RegistroDeEmision> laTablaDeEmisiones = elContexto.Emisiones;
             laTablaDeEmisiones.Add(elRegistroDeLaEmision);
+
             elContexto.SaveChanges();
         }
 
         public static List<RegistroDeEmision> ConsulteTodas()
         {
-            return new EmisionDBContext().Emisiones.ToList();
+            EmisionDBContext elContexto = new EmisionDBContext();
+            DbSet<RegistroDeEmision> laTablaDeEmisiones = elContexto.Emisiones;
+
+            return laTablaDeEmisiones.ToList();
         }
 
         public static RegistroDeEmision ObtengaPorId(int id)
         {
-            return new EmisionDBContext().Emisiones.Include("CertificadoDeAutenticacion").Include("CertificadoDeFirma").Where(c => c.ID == id).FirstOrDefault();
+            EmisionDBContext elContexto = new EmisionDBContext();
+            DbSet<RegistroDeEmision> laTablaDeEmisiones = elContexto.Emisiones;
+            var laConsultaConAutenticacion = laTablaDeEmisiones.Include("CertificadoDeAutenticacion");
+            var laConsultaConFirma = laConsultaConAutenticacion.Include("CertificadoDeFirma");
+            var lasEmisionesQueCumplen = laConsultaConFirma.Where(c => c.ID == id);
+
+            return lasEmisionesQueCumplen.FirstOrDefault();
         }
     }
 }

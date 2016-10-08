@@ -7,16 +7,26 @@ namespace Certificados.DS.MapeosABaseDeDatos
     { 
         public string ObtengaLaDireccionDeRevocacion()
         {
+            EmisionDBContext elContexto = new EmisionDBContext();
+            DbSet<RegistroDeParametro> laTablaDeParametros = elContexto.Parametros;
+
             const string crl = "direccionDeRevocacion";
-            return new EmisionDBContext().Parametros.Where(c => c.Nombre == crl).First().Valor;
+            var laConsultaDeParametros = laTablaDeParametros.Where(c => c.Nombre == crl);
+            RegistroDeParametro elParametroBuscado = laConsultaDeParametros.First();
+
+            return elParametroBuscado.Valor;
         }
 
         public int ObtengaLosAñosDeVigencia()
         {
+            EmisionDBContext elContexto = new EmisionDBContext();
+            DbSet<RegistroDeParametro> laTablaDeParametros = elContexto.Parametros;
             const string añosDeVigencia = "añosDeVigencia";
-            string elValor= new EmisionDBContext().Parametros.Where(c => c.Nombre == añosDeVigencia).First().Valor;
+            var laConsultaDeParametros = laTablaDeParametros.Where(c => c.Nombre == añosDeVigencia);
+            RegistroDeParametro elParametroBuscado = laConsultaDeParametros.First();
+            var elValorBuscado = elParametroBuscado.Valor;
 
-            return int.Parse(elValor);
+            return int.Parse(elValorBuscado);
         }
 
     }
